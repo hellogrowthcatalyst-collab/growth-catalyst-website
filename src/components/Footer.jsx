@@ -40,12 +40,12 @@ export default function Footer() {
             <h4 className="footer__heading">Contact</h4>
             <ul className="footer__list">
               <li>
-                <a href="mailto:hello@growthcatalyst.co">hello@growthcatalyst.co</a>
+                <a href="mailto:hello@growthcatalyst.co">hello@growthcatalyst.com</a>
               </li>
               <li>
                 <a href="tel:+11234567890">+1 (123) 456-7890</a>
               </li>
-              <li>New York, NY</li>
+              <li>Lapu-Lapu City, Cebu</li>
             </ul>
           </div>
 
