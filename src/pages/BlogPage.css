@@ -1,0 +1,19 @@
+.blog-page__hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: var(--nav-height);
+}
+
+.blog-page__hero h1 {
+  margin-bottom: var(--space-sm);
+  color: var(--white);
+}
+
+.blog-page__subtitle {
+  color: var(--gray);
+  font-size: 1.125rem;
+  margin: 0 auto;
+}

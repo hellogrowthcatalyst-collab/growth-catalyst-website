@@ -1,0 +1,207 @@
+.intern-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.intern-hero {
+  padding-top: calc(var(--nav-height) + var(--space-xl));
+  padding-bottom: var(--space-2xl);
+  text-align: center;
+}
+
+.intern-hero__title {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  color: var(--white);
+  margin-bottom: var(--space-md);
+}
+
+.intern-hero__subtitle {
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  color: var(--gray-light);
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.intern-benefits-section {
+  padding: var(--space-2xl) 0;
+}
+
+.intern-benefits {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+}
+
+@media (min-width: 640px) {
+  .intern-benefits {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .intern-benefits {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.intern-benefit-card {
+  text-align: center;
+  padding: var(--space-md);
+}
+
+.intern-benefit-card__icon {
+  color: var(--federal-blue);
+  margin-bottom: var(--space-md);
+  display: flex;
+  justify-content: center;
+}
+
+.intern-benefit-card__title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  color: var(--rich-black);
+  margin-bottom: var(--space-xs);
+}
+
+.intern-benefit-card__desc {
+  font-family: var(--font-body);
+  color: var(--gray-dark);
+  line-height: 1.5;
+}
+
+.intern-tracks-section {
+  padding: var(--space-2xl) 0;
+}
+
+.intern-tracks {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+  margin-top: var(--space-lg);
+}
+
+@media (min-width: 768px) {
+  .intern-tracks {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.intern-track-card {
+  background-color: var(--white);
+  padding: var(--space-lg);
+  border-radius: 8px;
+  border-left: 4px solid var(--federal-blue);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.intern-track-card__title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  color: var(--rich-black);
+  margin-bottom: var(--space-xs);
+}
+
+.intern-track-card__desc {
+  font-family: var(--font-body);
+  color: var(--gray-dark);
+}
+
+.intern-apply-section {
+  padding: var(--space-2xl) 0;
+}
+
+.intern-form-wrapper {
+  max-width: 640px;
+  margin: var(--space-xl) auto 0;
+}
+
+.intern-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.intern-form__group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.intern-form__label {
+  font-family: var(--font-body);
+  font-weight: 600;
+  color: var(--rich-black);
+  font-size: 0.875rem;
+}
+
+.intern-form__input {
+  padding: 0.75rem;
+  border: 1px solid var(--gray-light);
+  border-radius: 4px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition: border-color var(--transition-fast);
+}
+
+.intern-form__input:focus {
+  outline: none;
+  border-color: var(--federal-blue);
+}
+
+.intern-form__textarea {
+  resize: vertical;
+}
+
+.intern-form__btn {
+  align-self: flex-start;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+}
+
+.intern-form__success {
+  text-align: center;
+  padding: var(--space-2xl) 0;
+  color: var(--federal-blue);
+}
+
+.intern-form__success-icon {
+  margin-bottom: var(--space-md);
+}
+
+.intern-form__success p {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--rich-black);
+}
+
+.intern-form__error {
+  color: #d32f2f;
+  background-color: #fdeaea;
+  padding: var(--space-sm);
+  border-radius: 4px;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+}
+
+.section-label {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--gray);
+  text-transform: uppercase;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
