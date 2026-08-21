@@ -1,9 +1,11 @@
+const base = import.meta.env.BASE_URL;
+
 export const teamMembers = [
   {
     id: 'lorenzo-francisco',
     name: 'Lorenzo Francisco',
     role: 'Founder & Growth Operations Strategist',
-    image: '/Enzo 4_5 Photo_Growth Catalyst.png',
+    image: `${base}Enzo 4_5 Photo_Growth Catalyst.png`,
     tagline: 'Architecting high-growth systems and operational infrastructure for modern enterprises.',
     bio: 'Lorenzo Francisco is the Founder and Growth Operations Strategist at Growth Catalyst Studio. With extensive experience in organizational scaling, process optimization, and growth strategy, Lorenzo specializes in turning complex operational challenges into streamlined engines for sustainable revenue. He believes that true growth occurs at the intersection of robust operational frameworks, empowered talent, and data-backed execution.',
     bibliography: [
@@ -29,7 +31,7 @@ export const teamMembers = [
     id: 'lyka-bernandez',
     name: 'Lyka Bernandez',
     role: 'Growth Catalyst Brand Specialist',
-    image: '/Lyka 4_5 Photo_Growth Catalyst.png',
+    image: `${base}Lyka 4_5 Photo_Growth Catalyst.png`,
     tagline: 'Crafting distinctive brand identities and compelling narrative experiences that drive market resonance.',
     bio: 'Lyka Bernandez leads Brand Strategy and Creative Direction at Growth Catalyst Studio. Bringing a sharp creative vision and strategic positioning expertise, Lyka helps organizations discover their authentic voice, refine visual identities, and build high-impact brand narratives that captivate audiences and establish long-term market authority.',
     bibliography: [
@@ -55,7 +57,7 @@ export const teamMembers = [
     id: 'clint-navarro',
     name: 'Clint Navarro',
     role: 'Growth Catalyst Media Specialist',
-    image: '/Clint 4_5 Photo_Growth Catalyst.png',
+    image: `${base}Clint 4_5 Photo_Growth Catalyst.png`,
     tagline: 'Driving multi-platform content production, media strategy, and high-engagement digital reach.',
     bio: 'Clint Navarro is the Media Specialist at Growth Catalyst Studio. Focusing on high-conversion media production, video strategy, and performance content distribution, Clint crafts visual media strategies that elevate brand visibility and turn passive viewers into active brand advocates across modern digital channels.',
     bibliography: [

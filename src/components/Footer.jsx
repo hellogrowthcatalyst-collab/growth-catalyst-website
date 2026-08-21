@@ -12,7 +12,7 @@ export default function Footer() {
           <div className="footer__brand">
             <Link to="/" className="footer__logo">
               <img 
-                src="/Logo_Growth Catalyst.png" 
+                src={`${import.meta.env.BASE_URL}Logo_Growth Catalyst.png`} 
                 alt="Growth Catalyst Logo" 
                 className="footer__logo-img" 
               />

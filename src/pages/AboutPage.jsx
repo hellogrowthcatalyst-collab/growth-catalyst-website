@@ -29,7 +29,7 @@ const AboutPage = () => {
       {/* 1. Hero / Mission Statement */}
       <section className="section section--dark about-hero">
         <video className="about-hero__video-bg" autoPlay loop muted playsInline>
-          <source src="/about background.mp4" type="video/mp4" />
+          <source src={`${import.meta.env.BASE_URL}about background.mp4`} type="video/mp4" />
         </video>
         <div className="about-hero__video-overlay"></div>
         <div className="about-hero__quote-mark">"</div>

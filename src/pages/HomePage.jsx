@@ -51,7 +51,7 @@ const HomePage = () => {
       {/* INDUSTRIES SERVED (ANIMATED TEXT-ONLY TICKER) */}
       <section className="section section--dark industries-section">
         <video className="industries-video-bg" autoPlay loop muted playsInline>
-          <source src="/Industries video.mp4" type="video/mp4" />
+          <source src={`${import.meta.env.BASE_URL}Industries video.mp4`} type="video/mp4" />
         </video>
         <div className="industries-video-overlay"></div>
         <div className="container reveal industries-header-content">

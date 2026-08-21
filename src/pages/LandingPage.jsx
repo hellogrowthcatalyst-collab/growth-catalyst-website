@@ -26,7 +26,7 @@ const LandingPage = () => {
   return (
     <div className="landing-page">
       <video className="landing-video-bg" autoPlay loop muted playsInline>
-        <source src="/background video.mp4" type="video/mp4" />
+        <source src={`${import.meta.env.BASE_URL}background video.mp4`} type="video/mp4" />
       </video>
       <div className="landing-video-overlay"></div>
       <div className="container landing-content">

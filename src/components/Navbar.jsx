@@ -40,7 +40,7 @@ export default function Navbar() {
       <div className="navbar__inner container">
         <Link to="/" className="navbar__logo">
           <img 
-            src="/Logo_Growth Catalyst.png" 
+            src={`${import.meta.env.BASE_URL}Logo_Growth Catalyst.png`} 
             alt="Growth Catalyst Logo" 
             className="navbar__logo-img" 
           />
