@@ -6,10 +6,11 @@ const industries = [
   'Real Estate',
   'Fitness',
   'E-Commerce',
-  'Non-Profit',
+  'Non-Profit Organizations',
   'Beauty & Cosmetic',
   'Trading',
-  'Cleaning',
+  'Cleaning Industries',
+  'And So On...'
 ];
 
 const HomePage = () => {
