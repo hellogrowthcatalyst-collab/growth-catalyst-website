@@ -297,10 +297,14 @@
 
 /* CTA Section */
 .services-cta-section {
-  padding: var(--space-2xl) 0;
+  padding: var(--space-3xl) 0;
+}
+
+.services-cta-heading {
+  margin-bottom: 2rem; 
 }
 
 .services-cta-btn {
   font-size: 1.1rem;
-  padding: 1rem 2.5rem;
+  padding: 0.75rem 2.5rem;
 }

@@ -295,7 +295,7 @@ export default function ServicesPage() {
       {/* CTA Section */}
       <section className="section section--blue services-cta-section">
         <div className="container text-center reveal">
-          <h2>Join Us. Build Your Future</h2>
+          <h2 className="services-cta-heading">Ready to Move in the Same Direction?</h2>
           <Link to="/contact" className="btn btn--outline-white btn--pill services-cta-btn">
             Contact Us to Get Started
           </Link>

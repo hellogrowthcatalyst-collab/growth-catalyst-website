@@ -44,7 +44,7 @@ export default function Navbar() {
             alt="Growth Catalyst Logo" 
             className="navbar__logo-img" 
           />
-          <span>Growth <span className="navbar__logo-accent">Catalyst</span></span>
+          <span>Growth Catalyst</span>
         </Link>
 
         <nav className={`navbar__nav ${menuOpen ? 'navbar__nav--open' : ''}`}>

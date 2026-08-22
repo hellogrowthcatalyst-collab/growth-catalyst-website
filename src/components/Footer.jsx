@@ -16,7 +16,7 @@ export default function Footer() {
                 alt="Growth Catalyst Logo" 
                 className="footer__logo-img" 
               />
-              <span>Growth <span className="footer__logo-accent">Catalyst</span></span>
+              <span>Growth Catalyst</span>
             </Link>
             <p className="footer__tagline">
               Strategy. Systems. Scale.

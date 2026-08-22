@@ -55,10 +55,6 @@
   transform: scale(1.06);
 }
 
-.navbar__logo-accent {
-  color: var(--federal-blue-light);
-}
-
 .navbar--scrolled .navbar__logo-accent {
   color: #4d8ae0;
 }

@@ -32,8 +32,8 @@ const AboutPage = () => {
           <source src={`${import.meta.env.BASE_URL}about background.mp4`} type="video/mp4" />
         </video>
         <div className="about-hero__video-overlay"></div>
-        <div className="about-hero__quote-mark">"</div>
         <div className="container">
+          <div className="about-hero__quote-mark">"</div>
           <span className="section-label reveal">OUR MISSION</span>
           <h1 className="about-hero__mission reveal">
             To empower businesses with the strategy, systems, and creative infrastructure to achieve sustainable growth.
