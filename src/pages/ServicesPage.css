@@ -9,14 +9,16 @@
 
 .services-hero__title {
   font-family: var(--font-heading);
-  font-size: clamp(5rem, 5vw, 4rem);
+  font-size: clamp(20px, 3.5vw, 32px);
+  font-weight: 700;
   color: var(--white);
   margin-top: var(--space-xs);
 }
 
 .services-section-title {
   font-family: var(--font-heading);
-  font-size: clamp(3rem, 3.5vw, 2.75rem);
+  font-size: clamp(18px, 2.5vw, 20px);
+  font-weight: 700;
   color: var(--rich-black);
   margin-bottom: var(--space-lg);
 }
@@ -63,9 +65,9 @@
 .package-card__badge {
   display: inline-block;
   align-self: flex-start;
-  font-family: var(--font-heading);
-  font-size: 0.75rem;
-  font-weight: 700;
+  font-family: var(--font-subheading);
+  font-size: 13px;
+  font-weight: 400;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--federal-blue);
@@ -81,7 +83,7 @@
 
 .package-card__title {
   font-family: var(--font-heading);
-  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-size: clamp(18px, 2.5vw, 20px);
   color: var(--rich-black);
   font-weight: 700;
 }
@@ -109,7 +111,7 @@
 
 .package-category__title {
   font-family: var(--font-heading);
-  font-size: 1.1rem;
+  font-size: 18px;
   font-weight: 700;
   color: var(--rich-black);
   margin-bottom: var(--space-md);
@@ -136,9 +138,11 @@
   display: flex;
   align-items: flex-start;
   gap: 0.6rem;
-  font-size: 0.95rem;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 400;
   color: var(--gray-dark);
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 .package-category__list .check-icon {
@@ -185,9 +189,9 @@
 
 .coming-soon-pill {
   display: inline-block;
-  font-family: var(--font-heading);
-  font-size: 0.9rem;
-  font-weight: 600;
+  font-family: var(--font-subheading);
+  font-size: 13px;
+  font-weight: 400;
   color: var(--gray-dark);
   background-color: rgba(0, 0, 0, 0.04);
   border: 1px solid var(--gray-light);
@@ -260,16 +264,18 @@
 
 .process-step-card__title {
   font-family: var(--font-heading);
-  font-size: 1.25rem;
+  font-size: 18px;
   font-weight: 700;
   color: var(--rich-black);
   margin-bottom: var(--space-xs);
 }
 
 .process-step-card__desc {
-  font-size: 0.95rem;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 400;
   color: var(--gray-dark);
-  line-height: 1.55;
+  line-height: 1.6;
 }
 
 /* Process Closing Section */
@@ -287,8 +293,10 @@
 }
 
 .process-closing__paragraph {
-  font-size: 1.125rem;
-  line-height: 1.7;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
   color: rgba(255, 255, 255, 0.88);
   text-align: center;
   margin: 0 auto;
@@ -301,6 +309,9 @@
 }
 
 .services-cta-heading {
+  font-family: var(--font-heading);
+  font-size: clamp(18px, 2.5vw, 24px);
+  font-weight: 700;
   margin-bottom: 2rem; 
 }
 

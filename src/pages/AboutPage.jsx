@@ -33,7 +33,7 @@ const AboutPage = () => {
         </video>
         <div className="about-hero__video-overlay"></div>
         <div className="container">
-          <div className="about-hero__quote-mark">"</div>
+          <div className="about-hero__quote-mark" aria-hidden="true">“</div>
           <span className="section-label reveal">OUR MISSION</span>
           <h1 className="about-hero__mission reveal">
             To empower businesses with the strategy, systems, and creative infrastructure to achieve sustainable growth.
@@ -42,21 +42,32 @@ const AboutPage = () => {
       </section>
 
       {/* 2. Our Story */}
-      <section className="section section--white">
-        <div className="container story-grid">
-          <div className="story-content reveal">
-            <span className="section-label">OUR JOURNEY</span>
-            <h2>Built by Builders</h2>
-            <p>
-              Growth Catalyst began with the belief that growth is built through strong systems, meaningful partnerships, and talented people.
-            </p>
-            <p>
-              Today, we're committed to helping businesses scale with confidence while creating opportunities for specialists to grow, learn, and succeed together.
-            </p>
+      <section className="story-section">
+        <div className="story-split">
+          <div className="story-content-col reveal">
+            <div className="story-content">
+              <span className="section-label">OUR JOURNEY</span>
+              <h2>Built by Builders</h2>
+              <p>
+                Growth Catalyst began with the belief that growth is built through strong systems, meaningful partnerships, and talented people.
+              </p>
+              <p>
+                Today, we're committed to helping businesses scale with confidence while creating opportunities for specialists to grow, learn, and succeed together.
+              </p>
+            </div>
           </div>
-          <div className="story-visual reveal">
-            <div className="story-visual__shape1"></div>
-            <div className="story-visual__shape2"></div>
+          <div className="story-image-col reveal">
+            <div className="story-image-division">
+              <div className="story-image-placeholder__inner">
+                <svg className="story-image-placeholder__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                  <circle cx="8.5" cy="8.5" r="1.5" />
+                  <polyline points="21 15 16 10 5 21" />
+                </svg>
+                <span className="story-image-placeholder__text">Photo Placeholder</span>
+                <span className="story-image-placeholder__subtext">Recommended: 1200 x 900</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>

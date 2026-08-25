@@ -37,14 +37,29 @@ const HomePage = () => {
   return (
     <div className="home-page">
       {/* WHO WE ARE */}
-      <section className="section section--white">
-        <div className="container">
-          <div className="reveal text-center">
-            <span className="section-label">WHO WE ARE</span>
-            <h2 className="home-heading">Strategy Meets Execution</h2>
-            <p className="home-paragraph">
-              Growth Catalyst is a growth operations partner helping businesses scale through strategic marketing, streamlined systems, automation, and creative digital solutions.
-            </p>
+      <section className="who-we-are-section">
+        <div className="who-we-are-split">
+          <div className="who-we-are-content-col reveal">
+            <div className="who-we-are-content">
+              <span className="section-label">WHO WE ARE</span>
+              <h2 className="home-heading">Strategy Meets Execution</h2>
+              <p className="home-paragraph">
+                Growth Catalyst is a growth operations partner helping businesses scale through strategic marketing, streamlined systems, automation, and creative digital solutions.
+              </p>
+            </div>
+          </div>
+          <div className="who-we-are-image-col reveal">
+            <div className="who-we-are-image-division">
+              <div className="who-we-are-image-placeholder__inner">
+                <svg className="who-we-are-image-placeholder__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                  <circle cx="8.5" cy="8.5" r="1.5" />
+                  <polyline points="21 15 16 10 5 21" />
+                </svg>
+                <span className="who-we-are-image-placeholder__text">Photo Placeholder</span>
+                <span className="who-we-are-image-placeholder__subtext">Recommended: 1200 x 900</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -89,7 +104,7 @@ const HomePage = () => {
       {/* SERVICES */}
       <section id="services" className="section section--white services-section">
         <div className="container">
-          <div className="reveal">
+          <div className="reveal text-center">
             <span className="section-label">WHAT WE OFFER</span>
             <h2 className="home-heading">Services Built for Growth</h2>
           </div>

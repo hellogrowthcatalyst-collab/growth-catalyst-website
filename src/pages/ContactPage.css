@@ -11,14 +11,16 @@
 
 .contact-hero__title {
   font-family: var(--font-heading);
-  font-size: 3rem;
+  font-size: clamp(20px, 3.5vw, 32px);
+  font-weight: 700;
   color: var(--white);
   margin-bottom: var(--space-md);
 }
 
 .contact-hero__subtitle {
-  font-family: var(--font-body);
-  font-size: 1.25rem;
+  font-family: var(--font-subheading);
+  font-size: 13px;
+  font-weight: 400;
   color: var(--gray-light);
   max-width: 600px;
   margin: 0 auto;
@@ -53,10 +55,10 @@
 }
 
 .contact-form__label {
-  font-family: var(--font-body);
-  font-weight: 600;
+  font-family: var(--font-subheading);
+  font-weight: 400;
   color: var(--rich-black);
-  font-size: 0.875rem;
+  font-size: 13px;
 }
 
 .contact-form__input {
@@ -64,7 +66,8 @@
   border: 1px solid var(--gray-light);
   border-radius: 4px;
   font-family: var(--font-body);
-  font-size: 1rem;
+  font-size: 16px;
+  font-weight: 400;
   transition: border-color var(--transition-fast);
 }
 
@@ -95,7 +98,8 @@
 
 .contact-form__success p {
   font-family: var(--font-heading);
-  font-size: 1.5rem;
+  font-size: 18px;
+  font-weight: 700;
   color: var(--rich-black);
 }
 
@@ -104,13 +108,15 @@
   background-color: #fdeaea;
   padding: var(--space-sm);
   border-radius: 4px;
-  font-family: var(--font-body);
-  font-size: 0.875rem;
+  font-family: var(--font-subheading);
+  font-size: 13px;
+  font-weight: 400;
 }
 
 .contact-details__title {
   font-family: var(--font-heading);
-  font-size: 1.5rem;
+  font-size: 18px;
+  font-weight: 700;
   color: var(--rich-black);
   margin-bottom: var(--space-lg);
 }
@@ -128,7 +134,8 @@
   gap: var(--space-md);
   font-family: var(--font-body);
   color: var(--rich-black);
-  font-size: 1.125rem;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 .contact-details__icon {
@@ -138,7 +145,8 @@
 
 .contact-social__title {
   font-family: var(--font-heading);
-  font-size: 1.25rem;
+  font-size: 18px;
+  font-weight: 700;
   color: var(--rich-black);
   margin-bottom: var(--space-md);
 }

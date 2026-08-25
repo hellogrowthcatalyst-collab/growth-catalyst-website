@@ -131,21 +131,25 @@
 }
 
 .member-name {
-  font-size: clamp(2.5rem, 5vw, 3.75rem);
+  font-family: var(--font-heading);
+  font-size: clamp(20px, 3.5vw, 32px);
+  font-weight: 700;
   color: var(--rich-black);
-  line-height: 1.08;
+  line-height: 1.15;
   margin-bottom: 0.5rem;
 }
 
 .member-role {
-  font-family: var(--font-heading);
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-family: var(--font-subheading);
+  font-size: 13px;
+  font-weight: 400;
   color: var(--federal-blue);
 }
 
 .member-tagline {
-  font-size: 1.2rem;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 400;
   line-height: 1.5;
   color: var(--gray-dark);
   font-style: italic;
@@ -169,16 +173,17 @@
 }
 
 .stat-label {
-  font-size: 0.75rem;
+  font-family: var(--font-subheading);
+  font-size: 13px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--gray);
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .stat-value {
   font-family: var(--font-heading);
-  font-size: 1rem;
+  font-size: 18px;
   font-weight: 700;
   color: var(--rich-black);
 }
@@ -194,7 +199,7 @@
 }
 
 .member-quote-box .quote-mark {
-  font-family: var(--font-heading);
+  font-family: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
   font-size: 4rem;
   color: var(--federal-blue);
   opacity: 0.25;
@@ -207,10 +212,11 @@
 .quote-text {
   position: relative;
   z-index: 1;
-  font-size: 1.05rem;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 400;
   line-height: 1.6;
   color: var(--rich-black);
-  font-weight: 500;
 }
 
 /* ── Details Section (Bibliography & Biography) ── */
@@ -227,14 +233,18 @@
 }
 
 .detail-title {
-  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-family: var(--font-heading);
+  font-size: clamp(18px, 2.5vw, 20px);
+  font-weight: 700;
   color: var(--rich-black);
   margin-bottom: var(--space-md);
 }
 
 .detail-text {
-  font-size: 1.125rem;
-  line-height: 1.75;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
   color: var(--gray-dark);
   max-width: 100%;
 }
@@ -271,7 +281,9 @@
 }
 
 .bib-content p {
-  font-size: 1.05rem;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 400;
   line-height: 1.6;
   color: var(--rich-black);
   margin: 0;
@@ -289,9 +301,9 @@
 .expertise-pill {
   background: rgba(0, 51, 153, 0.08);
   color: var(--federal-blue);
-  font-family: var(--font-heading);
-  font-weight: 600;
-  font-size: 0.9rem;
+  font-family: var(--font-subheading);
+  font-weight: 400;
+  font-size: 13px;
   padding: 0.6rem 1.25rem;
   border-radius: 100px;
   border: 1px solid rgba(0, 51, 153, 0.15);
@@ -314,6 +326,9 @@
 }
 
 .member-nav-header h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(18px, 2.5vw, 20px);
+  font-weight: 700;
   color: var(--white);
 }
 
@@ -350,9 +365,9 @@
 }
 
 .nav-direction {
-  font-family: var(--font-heading);
-  font-size: 0.8125rem;
-  font-weight: 600;
+  font-family: var(--font-subheading);
+  font-size: 13px;
+  font-weight: 400;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--federal-blue-light);
@@ -372,15 +387,36 @@
   border: 2px solid var(--federal-blue);
 }
 
+.nav-avatar-placeholder {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--federal-blue-light) 0%, var(--federal-blue) 100%);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  border: 2px solid var(--federal-blue);
+  flex-shrink: 0;
+}
+
 .nav-member-info h4 {
   color: var(--white);
-  font-size: 1.15rem;
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 700;
   margin-bottom: 0.2rem;
 }
 
 .nav-member-info p {
   color: rgba(255, 255, 255, 0.6);
-  font-size: 0.85rem;
+  font-family: var(--font-subheading);
+  font-size: 13px;
+  font-weight: 400;
   line-height: 1.3;
 }
 

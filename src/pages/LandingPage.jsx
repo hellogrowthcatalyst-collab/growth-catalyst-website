@@ -32,7 +32,7 @@ const LandingPage = () => {
       <div className="container landing-content">
         <h1 className="landing-title reveal">Your Dedicated Partner in Business Transformation</h1>
         <p className="landing-subtitle reveal">
-          We help ambitious brands build the strategy, systems, and creative infrastructure they need to scale — and stay scaled.
+          We help ambitious brands build the strategy, systems, and creative infrastructure they need to scale and stay scaled.
         </p>
         <div className="reveal">
           <Link to="/home" className="btn btn--primary btn--pill landing-cta">Get Started</Link>

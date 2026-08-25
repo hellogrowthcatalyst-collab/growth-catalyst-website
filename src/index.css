@@ -15,8 +15,9 @@
   --gray-dark: #4A4E56;
 
   /* ── Typography ── */
-  --font-heading: 'Space Grotesk', system-ui, sans-serif;
-  --font-body: 'Inter', system-ui, sans-serif;
+  --font-heading: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-subheading: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
   /* ── Spacing Scale ── */
   --space-xs: 0.5rem;
@@ -41,26 +42,33 @@
 /* ── Reset ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-size: 16px; }
-body { font-family: var(--font-body); color: var(--rich-black); background: var(--off-white); line-height: 1.6; overflow-x: hidden; }
+body { font-family: var(--font-body); font-weight: 400; font-size: 16px; color: var(--rich-black); background: var(--off-white); line-height: 1.6; overflow-x: hidden; }
 img, svg { display: block; max-width: 100%; }
 a { color: inherit; text-decoration: none; transition: color var(--transition-fast); }
 button { cursor: pointer; border: none; background: none; font: inherit; }
 ul, ol { list-style: none; }
-input, textarea, select { font: inherit; }
+input, textarea, select { font-family: var(--font-body); font-size: 16px; font-weight: 400; }
 
 /* ── Typography ── */
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
 }
 
-h1 { font-size: clamp(2.25rem, 5vw, 4rem); }
-h2 { font-size: clamp(1.75rem, 3.5vw, 2.75rem); }
-h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
+h1 { font-size: clamp(20px, 3.5vw, 32px); }
+h2 { font-size: clamp(18px, 2.5vw, 24px); }
+h3 { font-size: clamp(16px, 2vw, 20px); }
+h4 { font-size: 16px; }
 
-p { max-width: 62ch; }
+p {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  max-width: 62ch;
+}
 
 /* ── Layout Utilities ── */
 .container {
@@ -72,6 +80,15 @@ p { max-width: 62ch; }
 
 .container--narrow {
   max-width: var(--max-width-narrow);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-center p {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* ── Sections ── */
@@ -200,12 +217,13 @@ p { max-width: 62ch; }
   opacity: 0.15;
 }
 
-/* ── Section Label ── */
+/* ── Section Label (Sub header) ── */
 .section-label {
-  font-family: var(--font-heading);
-  font-size: 0.8125rem;
+  display: inline-block;
+  font-family: var(--font-subheading);
+  font-size: 13px;
   font-weight: 600;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--federal-blue);
   margin-bottom: var(--space-sm);
@@ -213,7 +231,7 @@ p { max-width: 62ch; }
 
 .section--dark .section-label,
 .section--blue .section-label {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 /* ── Responsive Breakpoints ── */

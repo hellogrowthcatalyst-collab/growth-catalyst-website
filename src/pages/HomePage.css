@@ -4,7 +4,8 @@
 
 .home-heading {
   font-family: var(--font-heading);
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(18px, 2.5vw, 20px);
+  font-weight: 700;
   margin-bottom: var(--space-lg);
   color: var(--rich-black);
 }
@@ -14,16 +15,141 @@
 }
 
 .home-paragraph {
-  font-size: clamp(1.125rem, 2vw, 1.25rem);
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 400;
   line-height: 1.6;
   max-width: 800px;
   color: var(--gray-dark);
   margin: 0 auto;
 }
 
+/* ── WHO WE ARE (Full Split-Screen / Edge-to-Edge Division) ── */
+.who-we-are-section {
+  width: 100%;
+  background-color: var(--white);
+  overflow: hidden;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.who-we-are-split {
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 480px;
+  width: 100%;
+}
+
+@media (min-width: 900px) {
+  .who-we-are-split {
+    grid-template-columns: 1fr 1fr;
+    min-height: 520px;
+  }
+}
+
+.who-we-are-content-col {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: clamp(3.5rem, 6vw, 5.5rem) clamp(1.5rem, 4vw, 4rem);
+  background-color: var(--white);
+}
+
+.who-we-are-content {
+  width: 100%;
+  max-width: 580px;
+  text-align: left;
+}
+
+.who-we-are-content .section-label {
+  display: inline-block;
+  font-family: var(--font-subheading);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: var(--federal-blue);
+  margin-bottom: var(--space-sm);
+}
+
+.who-we-are-content .home-heading {
+  margin-bottom: var(--space-md);
+  text-align: left;
+}
+
+.who-we-are-content .home-paragraph {
+  margin: 0;
+  text-align: left;
+  max-width: 100%;
+}
+
+/* Right-side Full Division (Not a contained floating card) */
+.who-we-are-image-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f8fafc 0%, #edf2f9 100%);
+  border-top: 1px solid rgba(0, 51, 153, 0.08);
+  padding: clamp(3rem, 5vw, 5rem) clamp(1.5rem, 4vw, 3rem);
+  position: relative;
+  min-height: 320px;
+}
+
+@media (min-width: 900px) {
+  .who-we-are-image-col {
+    border-top: none;
+    border-left: 1px solid rgba(0, 51, 153, 0.08);
+  }
+}
+
+.who-we-are-image-division {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.who-we-are-image-placeholder__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.75rem;
+}
+
+.who-we-are-image-placeholder__icon {
+  width: 54px;
+  height: 54px;
+  color: var(--federal-blue);
+  opacity: 0.65;
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
+}
+
+.who-we-are-image-col:hover .who-we-are-image-placeholder__icon {
+  transform: scale(1.08);
+  opacity: 0.9;
+}
+
+.who-we-are-image-placeholder__text {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--rich-black);
+  letter-spacing: 0.02em;
+}
+
+.who-we-are-image-placeholder__subtext {
+  font-family: var(--font-subheading);
+  font-size: 13px;
+  color: var(--gray-dark);
+  letter-spacing: 0.04em;
+  opacity: 0.75;
+}
+
 .industries-paragraph {
-  font-size: 1.50rem;
-  line-height: 1.5;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
   max-width: 800px;
   color: var(--white);
   text-align: center;
@@ -78,9 +204,10 @@
 .industries-title {
   font-family: var(--font-heading);
   color: white;
-  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-size: clamp(18px, 2.5vw, 20px);
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.12em;
   margin-bottom: var(--space-xl);
   text-align: center;
 }
@@ -122,9 +249,9 @@
 
 .industry-name {
   font-family: var(--font-heading);
-  font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+  font-size: clamp(18px, 3vw, 24px);
   font-weight: 700;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.01em;
   color: white;
   white-space: nowrap;
   display: inline-block;
@@ -132,30 +259,35 @@
 
 /* Services */
 .services-grid {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: var(--space-lg);
   margin-top: var(--space-xl);
 }
 
-@media (min-width: 768px) {
-  .services-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1024px) {
-  .services-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
 .service-card {
+  flex: 1 1 100%;
+  max-width: 100%;
   padding: var(--space-lg);
   border: 1px solid rgba(0, 0, 0, 0.05);
   border-radius: 8px;
   background-color: var(--white);
   transition: transform var(--transition-base) var(--ease-out), box-shadow var(--transition-base) var(--ease-out);
+}
+
+@media (min-width: 768px) {
+  .service-card {
+    flex: 0 1 calc((100% - var(--space-lg)) / 2);
+    max-width: calc((100% - var(--space-lg)) / 2);
+  }
+}
+
+@media (min-width: 1024px) {
+  .service-card {
+    flex: 0 1 calc((100% - (var(--space-lg) * 2)) / 3);
+    max-width: calc((100% - (var(--space-lg) * 2)) / 3);
+  }
 }
 
 .service-card:hover {
@@ -172,14 +304,18 @@
 
 .service-card h3 {
   font-family: var(--font-heading);
-  font-size: 1.25rem;
+  font-size: 18px;
+  font-weight: 700;
   margin-bottom: var(--space-sm);
   color: var(--rich-black);
 }
 
 .service-card p {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 400;
   color: var(--gray-dark);
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 
@@ -189,21 +325,34 @@
   align-items: center;
   justify-content: center;
   padding: var(--space-3xl) 0;
+  text-align: center;
 }
 
 .cta-heading {
   font-family: var(--font-heading);
   color: var(--white);
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(18px, 2.5vw, 24px);
+  font-weight: 700;
   margin-bottom: var(--space-sm);
+  text-align: center;
 }
 
 .cta-subtext {
+  font-family: var(--font-subheading);
   color: rgba(255, 255, 255, 0.9);
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: 13px;
+  font-weight: 400;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: var(--space-xl);
+  text-align: center;
 }
 
 .text-center {
   text-align: center;
+}
+
+.text-center p {
+  margin-left: auto;
+  margin-right: auto;
 }

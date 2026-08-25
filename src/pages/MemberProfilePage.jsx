@@ -187,7 +187,13 @@ const MemberProfilePage = () => {
             <Link to={`/team/${prevMember.id}`} className="member-nav-card reveal">
               <span className="nav-direction">← Previous Member</span>
               <div className="nav-member-info">
-                <img src={prevMember.image} alt={prevMember.name} className="nav-avatar" />
+                {prevMember.image ? (
+                  <img src={prevMember.image} alt={prevMember.name} className="nav-avatar" />
+                ) : (
+                  <div className="nav-avatar-placeholder">
+                    <span>{prevMember.name.split(' ').map(n => n[0]).join('')}</span>
+                  </div>
+                )}
                 <div>
                   <h4>{prevMember.name}</h4>
                   <p>{prevMember.role}</p>
@@ -198,7 +204,13 @@ const MemberProfilePage = () => {
             <Link to={`/team/${nextMember.id}`} className="member-nav-card reveal reveal-delay-1">
               <span className="nav-direction">Next Member →</span>
               <div className="nav-member-info">
-                <img src={nextMember.image} alt={nextMember.name} className="nav-avatar" />
+                {nextMember.image ? (
+                  <img src={nextMember.image} alt={nextMember.name} className="nav-avatar" />
+                ) : (
+                  <div className="nav-avatar-placeholder">
+                    <span>{nextMember.name.split(' ').map(n => n[0]).join('')}</span>
+                  </div>
+                )}
                 <div>
                   <h4>{nextMember.name}</h4>
                   <p>{nextMember.role}</p>

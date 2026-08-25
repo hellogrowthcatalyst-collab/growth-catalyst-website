@@ -11,14 +11,16 @@
 
 .intern-hero__title {
   font-family: var(--font-heading);
-  font-size: 3rem;
+  font-size: clamp(20px, 3.5vw, 32px);
+  font-weight: 700;
   color: var(--white);
   margin-bottom: var(--space-md);
 }
 
 .intern-hero__subtitle {
-  font-family: var(--font-body);
-  font-size: 1.25rem;
+  font-family: var(--font-subheading);
+  font-size: 13px;
+  font-weight: 400;
   color: var(--gray-light);
   max-width: 800px;
   margin: 0 auto;
@@ -61,15 +63,18 @@
 
 .intern-benefit-card__title {
   font-family: var(--font-heading);
-  font-size: 1.25rem;
+  font-size: 18px;
+  font-weight: 700;
   color: var(--rich-black);
   margin-bottom: var(--space-xs);
 }
 
 .intern-benefit-card__desc {
   font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 400;
   color: var(--gray-dark);
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .intern-tracks-section {
@@ -98,14 +103,18 @@
 
 .intern-track-card__title {
   font-family: var(--font-heading);
-  font-size: 1.25rem;
+  font-size: 18px;
+  font-weight: 700;
   color: var(--rich-black);
   margin-bottom: var(--space-xs);
 }
 
 .intern-track-card__desc {
   font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 400;
   color: var(--gray-dark);
+  line-height: 1.6;
 }
 
 .intern-apply-section {
@@ -130,10 +139,10 @@
 }
 
 .intern-form__label {
-  font-family: var(--font-body);
-  font-weight: 600;
+  font-family: var(--font-subheading);
+  font-weight: 400;
   color: var(--rich-black);
-  font-size: 0.875rem;
+  font-size: 13px;
 }
 
 .intern-form__input {
@@ -141,7 +150,8 @@
   border: 1px solid var(--gray-light);
   border-radius: 4px;
   font-family: var(--font-body);
-  font-size: 1rem;
+  font-size: 16px;
+  font-weight: 400;
   transition: border-color var(--transition-fast);
 }
 
@@ -172,7 +182,8 @@
 
 .intern-form__success p {
   font-family: var(--font-heading);
-  font-size: 1.5rem;
+  font-size: 18px;
+  font-weight: 700;
   color: var(--rich-black);
 }
 
@@ -181,15 +192,16 @@
   background-color: #fdeaea;
   padding: var(--space-sm);
   border-radius: 4px;
-  font-family: var(--font-body);
-  font-size: 0.875rem;
+  font-family: var(--font-subheading);
+  font-size: 13px;
+  font-weight: 400;
 }
 
 .section-label {
-  font-family: var(--font-body);
-  font-size: 0.875rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
+  font-family: var(--font-subheading);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
   color: var(--gray);
   text-transform: uppercase;
 }
