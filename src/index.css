@@ -3,16 +3,37 @@
    ═══════════════════════════════════════════════════ */
 
 :root {
-  /* ── Brand Palette ── */
-  --federal-blue: #003399;
-  --federal-blue-light: #1a5ccf;
-  --federal-blue-dark: #002266;
-  --rich-black: #010203;
-  --off-white: #F5F5F5;
-  --white: #FFFFFF;
-  --gray: #8A8F98;
-  --gray-light: #C8CCD2;
-  --gray-dark: #4A4E56;
+  /* ── Primary Colors ── */
+  --color-blue: #2563EB;
+  --color-blue-hover: #1D4ED8;
+  --color-blue-light: #3B82F6;
+  --color-navy: #1E3A5F;
+  --color-navy-dark: #112236;
+  --color-navy-light: #2C5282;
+
+  /* ── Secondary Colors ── */
+  --color-green: #22C55E;
+  --color-green-hover: #16A34A;
+  --color-light-gray: #F5F7FA;
+  --color-white: #FFFFFF;
+
+  /* ── Accent Color ── */
+  --color-gold: #F59E0B;
+  --color-gold-hover: #D97706;
+
+  /* ── Semantic Aliases ── */
+  --federal-blue: var(--color-blue);
+  --federal-blue-light: var(--color-blue-light);
+  --federal-blue-dark: var(--color-blue-hover);
+  --navy: var(--color-navy);
+  --rich-black: var(--color-navy);
+  --off-white: var(--color-light-gray);
+  --white: var(--color-white);
+  --accent-gold: var(--color-gold);
+  --secondary-green: var(--color-green);
+  --gray: #64748B;
+  --gray-light: #E2E8F0;
+  --gray-dark: #334155;
 
   /* ── Typography ── */
   --font-heading: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -129,26 +150,41 @@ p {
 }
 
 .btn--primary {
-  background: var(--federal-blue);
+  background: var(--color-blue);
   color: var(--white);
-  border: 2px solid var(--federal-blue);
+  border: 2px solid var(--color-blue);
 }
 
 .btn--primary:hover {
-  background: var(--federal-blue-light);
-  border-color: var(--federal-blue-light);
+  background: var(--color-blue-hover);
+  border-color: var(--color-blue-hover);
   transform: translateY(-2px);
-  box-shadow: 0 4px 20px rgba(0, 51, 153, 0.3);
+  box-shadow: 0 4px 20px rgba(37, 99, 235, 0.35);
+}
+
+.btn--accent,
+.btn--gold {
+  background: var(--color-gold);
+  color: var(--white);
+  border: 2px solid var(--color-gold);
+}
+
+.btn--accent:hover,
+.btn--gold:hover {
+  background: var(--color-gold-hover);
+  border-color: var(--color-gold-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(245, 158, 11, 0.35);
 }
 
 .btn--outline {
   background: transparent;
-  color: var(--federal-blue);
-  border: 2px solid var(--federal-blue);
+  color: var(--color-blue);
+  border: 2px solid var(--color-blue);
 }
 
 .btn--outline:hover {
-  background: var(--federal-blue);
+  background: var(--color-blue);
   color: var(--white);
   transform: translateY(-2px);
 }

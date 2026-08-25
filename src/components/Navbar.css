@@ -16,9 +16,9 @@
 }
 
 .navbar--scrolled {
-  background: rgba(1, 2, 3, 0.95);
+  background: rgba(30, 58, 95, 0.95);
   backdrop-filter: blur(12px);
-  box-shadow: 0 1px 0 rgba(0, 51, 153, 0.15);
+  box-shadow: 0 1px 0 rgba(37, 99, 235, 0.2);
 }
 
 .navbar__inner {
@@ -56,7 +56,7 @@
 }
 
 .navbar--scrolled .navbar__logo-accent {
-  color: #4d8ae0;
+  color: var(--color-blue-light);
 }
 
 /* ── Nav Links ── */
@@ -70,7 +70,7 @@
   font-family: var(--font-body);
   font-size: 0.875rem;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.8);
   letter-spacing: 0.01em;
   transition: color var(--transition-fast);
   position: relative;
@@ -83,7 +83,7 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--federal-blue-light);
+  background: var(--color-blue-light);
   transition: width var(--transition-base);
 }
 
@@ -175,7 +175,7 @@
     width: 100%;
     height: 100vh;
     height: 100dvh;
-    background: rgba(1, 2, 3, 0.98);
+    background: rgba(30, 58, 95, 0.98);
     backdrop-filter: blur(20px);
     display: flex;
     align-items: center;

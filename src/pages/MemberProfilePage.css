@@ -11,7 +11,7 @@
 .member-profile-hero {
   padding: var(--space-xl) 0 var(--space-2xl);
   background: linear-gradient(180deg, #FFFFFF 0%, #F5F7FA 100%);
-  border-bottom: 1px solid rgba(0, 51, 153, 0.08);
+  border-bottom: 1px solid rgba(37, 99, 235, 0.08);
 }
 
 .member-breadcrumb {
@@ -60,7 +60,7 @@
   aspect-ratio: 4 / 5;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 51, 153, 0.12), 0 4px 12px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 20px 40px rgba(37, 99, 235, 0.12), 0 4px 12px rgba(0, 0, 0, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.8);
   background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
 }
@@ -103,7 +103,7 @@
   bottom: 16px;
   left: 16px;
   right: 16px;
-  background: rgba(1, 2, 3, 0.75);
+  background: rgba(30, 58, 95, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   color: var(--white);
@@ -190,11 +190,11 @@
 
 /* ── Quote Box ── */
 .member-quote-box {
-  background: rgba(0, 51, 153, 0.04);
+  background: rgba(37, 99, 235, 0.04);
   border-radius: 16px;
   padding: var(--space-md) var(--space-lg);
   position: relative;
-  border: 1px solid rgba(0, 51, 153, 0.1);
+  border: 1px solid rgba(37, 99, 235, 0.1);
   margin-top: var(--space-xs);
 }
 
@@ -270,7 +270,7 @@
 
 .bibliography-item:hover {
   transform: translateX(4px);
-  box-shadow: 0 4px 16px rgba(0, 51, 153, 0.08);
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.08);
 }
 
 .bib-icon {
@@ -299,14 +299,14 @@
 }
 
 .expertise-pill {
-  background: rgba(0, 51, 153, 0.08);
+  background: rgba(37, 99, 235, 0.08);
   color: var(--federal-blue);
   font-family: var(--font-subheading);
   font-weight: 400;
   font-size: 13px;
   padding: 0.6rem 1.25rem;
   border-radius: 100px;
-  border: 1px solid rgba(0, 51, 153, 0.15);
+  border: 1px solid rgba(37, 99, 235, 0.15);
   transition: all var(--transition-fast);
 }
 

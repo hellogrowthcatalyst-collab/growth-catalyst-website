@@ -5,7 +5,7 @@ export const teamMembers = [
     id: 'lorenzo-francisco',
     name: 'Lorenzo Francisco',
     role: 'Founder & Growth Operations Strategist',
-    image: `${base}Enzo 4_5 Photo_Growth Catalyst.png`,
+    image: `${base}lorenzo.jpeg`,
     tagline: 'Architecting high-growth systems and operational infrastructure for modern enterprises.',
     bio: 'Lorenzo Francisco is the Founder and Growth Operations Strategist at Growth Catalyst Global. With extensive experience in organizational scaling, process optimization, and growth strategy, Lorenzo specializes in turning complex operational challenges into streamlined engines for sustainable revenue. He believes that true growth occurs at the intersection of robust operational frameworks, empowered talent, and data-backed execution.',
     bibliography: [
@@ -53,56 +53,54 @@ export const teamMembers = [
     email: 'angelika@growthcatalyst.studio'
   },
   {
-    id: 'growth-specialist',
+    id: 'kevin-nacague',
     name: 'Kevin Nacague',
     role: 'Business Development Specialist',
-    image: null,
-    tagline: 'Expanding strategic boundaries and driving client growth acceleration.',
-    bio: 'Specializing in strategic scaling, high-impact acquisition funnels, and data-informed execution, this specialist collaborates closely with cross-functional teams to identify and unlock rapid growth levers across evolving digital landscapes.',
+    image: `${base}Kevin.jpeg`,
+    tagline: 'Efficient systems and clear communication are the foundation of any business that runs smoothly behind the scenes.',
+    bio: 'Kevin Nacague is a Freelance Video Editor and Operations Manager who keeps client operations running smoothly from behind the scenes. He manages customer support, oversees email and communication systems, and coordinates with suppliers to keep the day-to-day moving backed by hands-on Shopify management experience. His creative background in video editing brings a unique blend of operational precision and creative execution to every project.',
     bibliography: [
-      'Spearheading scalable growth sprint initiatives and multi-channel campaign architectures.',
-      'Formulating data-backed customer acquisition and retention frameworks.',
-      'Executing cross-functional growth experiments to optimize key performance metrics.',
-      'Developing data visualization dashboards to drive executive-level decision making.'
+      'Managed customer support operations and email/communication systems across multiple client accounts.',
+      'Coordinated with suppliers to keep day-to-day business operations running smoothly.',
+      'Combined hands-on Shopify management with a video editing background to deliver both operational and creative support.'
     ],
     expertise: [
-      'Growth Strategy & Funnels',
-      'Data Analytics & Metrics',
-      'Customer Acquisition',
-      'Conversion Rate Optimization',
-      'Strategic Experimentation'
+      'Operations Management & Systems',
+      'Customer Support & Communication',
+      'Shopify & E-Commerce Management',
+      'Supplier Coordination & Logistics',
+      'Creative Video Editing & Production'
     ],
-    quote: 'Sustainable growth is built by turning strategic insight into relentless, disciplined execution.',
-    education: 'B.S. in Business & Growth Analytics',
-    experienceYears: '5+ Years Experience',
+    quote: 'The best operations are the ones clients never have to think about clear systems, responsive support, and everything running on time.',
+    education: 'Virtual Assistant & Operations Management, with a background in video editing',
+    experienceYears: '2+ Years Experience',
     linkedin: 'https://linkedin.com',
-    email: 'specialist@growthcatalyst.studio'
+    email: 'kevin@growthcatalyst.studio'
   },
   {
-    id: 'creative-specialist',
+    id: 'jeune-senarlo',
     name: 'Jeune Senarlo',
     role: 'Client Success & Operation Specialist',
-    image: null,
-    tagline: 'Transforming creative ideas into high-converting visual systems.',
-    bio: 'Dedicated to elevating digital experiences and crafting impactful visual narratives, this specialist develops compelling multi-channel creative systems that build authority and deeply resonate with modern audiences.',
+    image: `${base}jeune.jpeg`,
+    tagline: 'Support. Solve. Improve.',
+    bio: 'Jeune Senarlo is the reliable customer support behind Growth Catalyst\'s client operations. With a service-oriented foundation from hospitality and hands-on e-commerce experience, Jeune handles order concerns, returns, and refunds with care, while building the tracking systems that turn customer feedback into real operational improvement.',
     bibliography: [
-      'Designing end-to-end visual systems and digital brand touchpoints for emerging ventures.',
-      'Creating high-converting creative assets and responsive interactive experiences.',
-      'Aligning aesthetic innovation with user experience and business performance metrics.',
-      'Curating dynamic digital design libraries and responsive UI/UX design systems.'
+      'Managed end-to-end customer concerns including returns, refunds, exchanges, and replacements for an e-commerce business.',
+      'Tracked orders and delivered logistics updates using Shopify and 17Track, following up on unresolved issues until completion.',
+      'Built complaint tracking systems to identify recurring product, logistics, and CX issues, providing business owners with actionable customer feedback.'
     ],
     expertise: [
-      'Visual & UI/UX Design',
-      'Motion & Visual Storytelling',
-      'Brand Identity Systems',
-      'Creative Production',
-      'Digital Experience Strategy'
+      'Client Success & Support',
+      'E-Commerce Operations & Logistics',
+      'Order Resolution & Returns Management',
+      'Shopify & Tracking Systems',
+      'Customer Experience (CX) Optimization'
     ],
-    quote: 'Exceptional design is not just what it looks like—it is how effortlessly it connects and converts.',
-    education: 'B.A. in Visual Arts & Digital Design',
-    experienceYears: '4+ Years Experience',
+    quote: 'Great customer support isn\'t just answering questions, it\'s resolving issues, documenting the pattern, and using it to make the whole experience better next time.',
+    education: 'B.S. in Hospitality Management, Major in Food and Beverage',
+    experienceYears: '1+ Year Experience',
     linkedin: 'https://linkedin.com',
-    email: 'creative@growthcatalyst.studio'
+    email: 'jeune@growthcatalyst.studio'
   }
 ];
 

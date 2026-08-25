@@ -56,13 +56,17 @@
 }
 
 .footer__list a:hover {
-  color: var(--federal-blue-light);
+  color: var(--color-blue-light);
 }
 
 /* ── Socials ── */
+.footer__col--socials {
+  max-width: 200px;
+}
+
 .footer__socials {
   display: flex;
-  gap: 0.75rem;
+  gap: 0.6rem;
   flex-wrap: wrap;
 }
 
@@ -80,8 +84,8 @@
 
 .footer__socials a:hover {
   color: var(--white);
-  border-color: var(--federal-blue);
-  background: rgba(0, 51, 153, 0.25);
+  border-color: var(--color-blue);
+  background: rgba(37, 99, 235, 0.25);
   transform: translateY(-2px);
 }
 
@@ -108,14 +112,14 @@
   border-radius: 50%;
   object-fit: cover;
   display: block;
-  box-shadow: 0 10px 30px rgba(0, 51, 153, 0.25), 0 0 20px rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.25), 0 0 20px rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
 }
 
 .footer__big-logo:hover .footer__big-logo-img {
   transform: scale(1.05);
-  box-shadow: 0 12px 36px rgba(0, 102, 255, 0.35), 0 0 25px rgba(255, 255, 255, 0.15);
+  box-shadow: 0 12px 36px rgba(37, 99, 235, 0.35), 0 0 25px rgba(255, 255, 255, 0.15);
 }
 
 .footer__tagline-wrapper {
