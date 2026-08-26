@@ -276,9 +276,42 @@ p {
 }
 
 /* ── Responsive Breakpoints ── */
+@media (min-width: 1440px) {
+  :root {
+    --max-width: 1360px;
+    --max-width-wide: 1560px;
+  }
+}
+
 @media (min-width: 1920px) {
+  :root {
+    --max-width: 1520px;
+    --max-width-wide: 1760px;
+    --space-3xl: 9rem;
+  }
   .container {
-    padding: 0 clamp(1.5rem, 3vw, 3rem);
+    padding: 0 clamp(2rem, 3vw, 4rem);
+  }
+}
+
+@media (min-width: 2560px) {
+  :root {
+    --max-width: 1720px;
+    --max-width-wide: 2000px;
+    --space-3xl: 10rem;
+  }
+  .container {
+    padding: 0 clamp(2.5rem, 4vw, 5rem);
+  }
+}
+
+@media (min-width: 3440px) {
+  :root {
+    --max-width: 1920px;
+    --max-width-wide: 2240px;
+  }
+  .container {
+    padding: 0 clamp(3rem, 5vw, 6rem);
   }
 }
 

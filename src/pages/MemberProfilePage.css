@@ -49,6 +49,20 @@
   }
 }
 
+@media (min-width: 1440px) {
+  .member-profile-grid {
+    grid-template-columns: 480px 1fr;
+    gap: var(--space-3xl);
+  }
+}
+
+@media (min-width: 1920px) {
+  .member-profile-grid {
+    grid-template-columns: 540px 1fr;
+    gap: var(--space-3xl);
+  }
+}
+
 /* ── Portrait Card Styling (Big Portrait Photo) ── */
 .member-portrait-wrapper {
   width: 100%;
