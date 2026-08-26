@@ -57,16 +57,12 @@ const AboutPage = () => {
             </div>
           </div>
           <div className="story-image-col reveal">
-            <div className="story-image-division">
-              <div className="story-image-placeholder__inner">
-                <svg className="story-image-placeholder__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-                  <circle cx="8.5" cy="8.5" r="1.5" />
-                  <polyline points="21 15 16 10 5 21" />
-                </svg>
-                <span className="story-image-placeholder__text">Photo Placeholder</span>
-                <span className="story-image-placeholder__subtext">Recommended: 1200 x 900</span>
-              </div>
+            <div className="story-image-wrap">
+              <img
+                src={`${import.meta.env.BASE_URL}Growthcatalyst.jpeg`}
+                alt="Growth Catalyst - Built by Builders"
+                className="story-img"
+              />
             </div>
           </div>
         </div>

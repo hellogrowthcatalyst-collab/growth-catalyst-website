@@ -7,8 +7,11 @@ const ContactPage = () => {
     email: '',
     message: ''
   });
+  const [honeypot, setHoneypot] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const loadedAtRef = useRef(Date.now());
 
   const observerRef = useRef(null);
 
@@ -35,16 +38,50 @@ const ContactPage = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Client-side validation (first pass)
+    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
+      setError('Please fill in all required fields.');
+      return;
+    }
+
     const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
     if (!emailRegex.test(formData.email)) {
       setError('Please enter a valid email address.');
       return;
     }
+
     setError('');
-    setSubmitted(true);
-    setFormData({ name: '', email: '', message: '' });
+    setLoading(true);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          _honeypot: honeypot,
+          _loadedAt: loadedAtRef.current,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setSubmitted(true);
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        setError(data.error || 'Something went wrong. Please try again.');
+      }
+    } catch (err) {
+      setError('Network error. Please check your connection and try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -58,7 +95,7 @@ const ContactPage = () => {
 
       <section className="section section--white contact-content">
         <div className="container contact-grid">
-          
+
           <div className="contact-left reveal">
             {submitted ? (
               <div className="contact-form__success">
@@ -68,7 +105,21 @@ const ContactPage = () => {
             ) : (
               <form className="contact-form" onSubmit={handleSubmit}>
                 {error && <div className="contact-form__error">{error}</div>}
-                
+
+                {/* Honeypot field — hidden from real users, bots auto-fill it */}
+                <div className="contact-form__honeypot" aria-hidden="true">
+                  <label htmlFor="website">Website</label>
+                  <input
+                    type="text"
+                    id="website"
+                    name="website"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={honeypot}
+                    onChange={(e) => setHoneypot(e.target.value)}
+                  />
+                </div>
+
                 <div className="contact-form__group">
                   <label htmlFor="name" className="contact-form__label">Name *</label>
                   <input type="text" id="name" name="name" required className="contact-form__input" value={formData.name} onChange={handleChange} />
@@ -84,22 +135,35 @@ const ContactPage = () => {
                   <textarea id="message" name="message" required className="contact-form__input contact-form__textarea" rows="4" value={formData.message} onChange={handleChange}></textarea>
                 </div>
 
-                <button type="submit" className="btn btn--primary contact-form__btn">Send Message</button>
+                <button
+                  type="submit"
+                  className={`btn btn--primary contact-form__btn${loading ? ' contact-form__btn--loading' : ''}`}
+                  disabled={loading}
+                >
+                  {loading ? (
+                    <>
+                      <span className="contact-form__spinner"></span>
+                      Sending...
+                    </>
+                  ) : (
+                    'Send Message'
+                  )}
+                </button>
               </form>
             )}
           </div>
 
           <div className="contact-right reveal">
             <h2 className="contact-details__title">Contact Information</h2>
-            
+
             <div className="contact-details__list">
               <div className="contact-details__item">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="contact-details__icon"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                <span>hello@growthcatalyst.co</span>
+                <span>hello@growthcatalyst.com</span>
               </div>
               <div className="contact-details__item">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="contact-details__icon"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                <span>+1 (123) 456-7890</span>
+                <span>+63 967 224 3141</span>
               </div>
               <div className="contact-details__item">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="contact-details__icon"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
@@ -128,7 +192,7 @@ const ContactPage = () => {
               </div>
             </div>
           </div>
-          
+
         </div>
       </section>
     </div>

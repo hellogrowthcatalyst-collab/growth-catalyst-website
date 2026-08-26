@@ -71,78 +71,71 @@
 }
 
 .who-we-are-content .home-heading {
-  margin-bottom: var(--space-md);
+  font-size: clamp(18px, 2.5vw, 24px);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--rich-black);
+  line-height: 1.2;
+  margin-bottom: var(--space-lg);
+  letter-spacing: -0.01em;
   text-align: left;
 }
 
 .who-we-are-content .home-paragraph {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--gray-dark);
   margin: 0;
-  text-align: left;
+  text-align: justify;
   max-width: 100%;
 }
 
-/* Right-side Full Division (Not a contained floating card) */
+/* Right-side Full Division Image */
 .who-we-are-image-col {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
-  background: linear-gradient(135deg, #FFFFFF 0%, #F5F7FA 100%);
+  background: var(--gray-light);
   border-top: 1px solid rgba(37, 99, 235, 0.08);
-  padding: clamp(3rem, 5vw, 5rem) clamp(1.5rem, 4vw, 3rem);
   position: relative;
-  min-height: 320px;
+  min-height: 380px;
+  overflow: hidden;
 }
 
 @media (min-width: 900px) {
   .who-we-are-image-col {
     border-top: none;
     border-left: 1px solid rgba(37, 99, 235, 0.08);
+    min-height: 100%;
   }
 }
 
-.who-we-are-image-division {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.who-we-are-image-wrap {
   width: 100%;
   height: 100%;
-}
-
-.who-we-are-image-placeholder__inner {
+  position: relative;
+  overflow: hidden;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 0.75rem;
 }
 
-.who-we-are-image-placeholder__icon {
-  width: 54px;
-  height: 54px;
-  color: var(--color-blue);
-  opacity: 0.65;
-  transition: transform var(--transition-fast), opacity var(--transition-fast);
+@media (min-width: 900px) {
+  .who-we-are-image-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
 }
 
-.who-we-are-image-col:hover .who-we-are-image-placeholder__icon {
-  transform: scale(1.08);
-  opacity: 0.9;
-}
-
-.who-we-are-image-placeholder__text {
-  font-family: var(--font-heading);
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--rich-black);
-  letter-spacing: 0.02em;
-}
-
-.who-we-are-image-placeholder__subtext {
-  font-family: var(--font-subheading);
-  font-size: 13px;
-  color: var(--gray-dark);
-  letter-spacing: 0.04em;
-  opacity: 0.75;
+.who-we-are-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
 }
 
 .industries-paragraph {
@@ -186,12 +179,10 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    to bottom,
-    rgba(10, 10, 12, 0.75) 0%,
-    rgba(10, 10, 12, 0.6) 50%,
-    rgba(10, 10, 12, 0.8) 100%
-  );
+  background: linear-gradient(to bottom,
+      rgba(10, 10, 12, 0.75) 0%,
+      rgba(10, 10, 12, 0.6) 50%,
+      rgba(10, 10, 12, 0.8) 100%);
   z-index: -1;
   pointer-events: none;
 }
@@ -235,6 +226,7 @@
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(calc(-100% / 3));
   }
