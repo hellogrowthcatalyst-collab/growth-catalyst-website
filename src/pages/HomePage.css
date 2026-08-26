@@ -35,14 +35,14 @@
 .who-we-are-split {
   display: grid;
   grid-template-columns: 1fr;
-  min-height: 480px;
+  min-height: 520px;
   width: 100%;
 }
 
 @media (min-width: 900px) {
   .who-we-are-split {
     grid-template-columns: 1fr 1fr;
-    min-height: 520px;
+    min-height: 620px;
   }
 }
 
