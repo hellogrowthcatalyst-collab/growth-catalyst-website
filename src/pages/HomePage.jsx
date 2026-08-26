@@ -37,24 +37,26 @@ const HomePage = () => {
   return (
     <div className="home-page">
       {/* WHO WE ARE */}
-      <section className="who-we-are-section">
-        <div className="who-we-are-split">
-          <div className="who-we-are-content-col reveal">
-            <div className="who-we-are-content">
-              <span className="section-label">WHO WE ARE</span>
-              <h2 className="home-heading">Strategy Meets Execution</h2>
-              <p className="home-paragraph">
-                Growth Catalyst is a growth operations partner helping businesses scale through strategic marketing, streamlined systems, automation, and creative digital solutions.
-              </p>
+      <section className="section section--white who-we-are-section">
+        <div className="container">
+          <div className="who-we-are-split">
+            <div className="who-we-are-content-col reveal">
+              <div className="who-we-are-content">
+                <span className="section-label">WHO WE ARE</span>
+                <h2 className="home-heading">Strategy Meets Execution</h2>
+                <p className="home-paragraph">
+                  Growth Catalyst is a growth operations partner helping businesses scale through strategic marketing, streamlined systems, automation, and creative digital solutions.
+                </p>
+              </div>
             </div>
-          </div>
-          <div className="who-we-are-image-col reveal">
-            <div className="who-we-are-image-wrap">
-              <img
-                src={`${import.meta.env.BASE_URL}builders.jpeg`}
-                alt="Growth Catalyst - Strategy Meets Execution"
-                className="who-we-are-img"
-              />
+            <div className="who-we-are-image-col reveal">
+              <div className="who-we-are-image-wrap">
+                <img
+                  src={`${import.meta.env.BASE_URL}builders.jpeg`}
+                  alt="Growth Catalyst - Strategy Meets Execution"
+                  className="who-we-are-img"
+                />
+              </div>
             </div>
           </div>
         </div>

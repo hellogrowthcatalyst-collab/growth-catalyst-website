@@ -76,82 +76,40 @@
   color: var(--white);
 }
 
-/* ── 2. Our Story Section (Full Split-Screen / Edge-to-Edge Division) ── */
+/* ── 2. Our Story Section ── */
 .story-section {
   width: 100%;
   background-color: var(--white);
-  overflow: hidden;
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .story-split {
   display: grid;
   grid-template-columns: 1fr;
-  min-height: 520px;
+  gap: var(--space-xl);
+  align-items: center;
   width: 100%;
 }
 
 @media (min-width: 900px) {
   .story-split {
     grid-template-columns: 1fr 1fr;
-    min-height: 620px;
-  }
-}
-
-@media (min-width: 1440px) {
-  .story-split {
-    min-height: 680px;
-  }
-}
-
-@media (min-width: 1920px) {
-  .story-split {
-    min-height: 760px;
-  }
-}
-
-@media (min-width: 2560px) {
-  .story-split {
-    min-height: 860px;
+    gap: clamp(2.5rem, 4vw, 4.5rem);
   }
 }
 
 .story-content-col {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  padding: clamp(3.5rem, 6vw, 5.5rem) clamp(1.5rem, 4vw, 4rem);
-  background-color: var(--white);
-}
-
-@media (min-width: 1920px) {
-  .story-content-col {
-    padding: 5.5rem clamp(3rem, 6vw, 6rem);
-  }
+  justify-content: flex-start;
+  background-color: transparent;
+  padding: 0;
 }
 
 .story-content {
   width: 100%;
-  max-width: 580px;
+  max-width: 100%;
   text-align: left;
-}
-
-@media (min-width: 1440px) {
-  .story-content {
-    max-width: 640px;
-  }
-}
-
-@media (min-width: 1920px) {
-  .story-content {
-    max-width: 720px;
-  }
-}
-
-@media (min-width: 2560px) {
-  .story-content {
-    max-width: 800px;
-  }
 }
 
 .story-content .section-label {
@@ -188,24 +146,16 @@
   margin-bottom: 0;
 }
 
-/* Right-side Full Division Image */
+/* Right-side Image */
 .story-image-col {
   display: flex;
-  align-items: stretch;
+  align-items: center;
   justify-content: center;
-  background: var(--gray-light);
-  border-top: 1px solid rgba(37, 99, 235, 0.08);
   position: relative;
-  min-height: 380px;
   overflow: hidden;
-}
-
-@media (min-width: 900px) {
-  .story-image-col {
-    border-top: none;
-    border-left: 1px solid rgba(37, 99, 235, 0.08);
-    min-height: 100%;
-  }
+  border-radius: 16px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .story-image-wrap {
@@ -214,15 +164,13 @@
   position: relative;
   overflow: hidden;
   display: flex;
+  aspect-ratio: 16 / 10;
+  min-height: 320px;
 }
 
 @media (min-width: 900px) {
   .story-image-wrap {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    min-height: 380px;
   }
 }
 

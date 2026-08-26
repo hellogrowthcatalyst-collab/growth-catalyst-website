@@ -42,27 +42,29 @@ const AboutPage = () => {
       </section>
 
       {/* 2. Our Story */}
-      <section className="story-section">
-        <div className="story-split">
-          <div className="story-content-col reveal">
-            <div className="story-content">
-              <span className="section-label">OUR JOURNEY</span>
-              <h2>Built by Builders</h2>
-              <p>
-                Growth Catalyst began with the belief that growth is built through strong systems, meaningful partnerships, and talented people.
-              </p>
-              <p>
-                Today, we're committed to helping businesses scale with confidence while creating opportunities for specialists to grow, learn, and succeed together.
-              </p>
+      <section className="section section--white story-section">
+        <div className="container">
+          <div className="story-split">
+            <div className="story-content-col reveal">
+              <div className="story-content">
+                <span className="section-label">OUR JOURNEY</span>
+                <h2>Built by Builders</h2>
+                <p>
+                  Growth Catalyst began with the belief that growth is built through strong systems, meaningful partnerships, and talented people.
+                </p>
+                <p>
+                  Today, we're committed to helping businesses scale with confidence while creating opportunities for specialists to grow, learn, and succeed together.
+                </p>
+              </div>
             </div>
-          </div>
-          <div className="story-image-col reveal">
-            <div className="story-image-wrap">
-              <img
-                src={`${import.meta.env.BASE_URL}Growthcatalyst.jpeg`}
-                alt="Growth Catalyst - Built by Builders"
-                className="story-img"
-              />
+            <div className="story-image-col reveal">
+              <div className="story-image-wrap">
+                <img
+                  src={`${import.meta.env.BASE_URL}Growthcatalyst.jpeg`}
+                  alt="Growth Catalyst - Built by Builders"
+                  className="story-img"
+                />
+              </div>
             </div>
           </div>
         </div>
