@@ -216,10 +216,16 @@
 
 .industries-marquee-track {
   display: flex;
+  width: max-content;
+  animation: industriesScroll 35s linear infinite;
+}
+
+.industries-marquee-group {
+  display: flex;
   align-items: center;
   gap: clamp(2.5rem, 5vw, 4rem);
-  width: max-content;
-  animation: industriesScroll 28s linear infinite;
+  padding-right: clamp(2.5rem, 5vw, 4rem);
+  flex-shrink: 0;
 }
 
 @keyframes industriesScroll {
@@ -228,7 +234,7 @@
   }
 
   100% {
-    transform: translateX(calc(-100% / 3));
+    transform: translateX(-50%);
   }
 }
 

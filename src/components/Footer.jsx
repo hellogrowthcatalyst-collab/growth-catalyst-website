@@ -30,7 +30,7 @@ export default function Footer() {
                   <a href="mailto:hello@growthcatalyst.com">hello@growthcatalyst.com</a>
                 </li>
                 <li>
-                  <a href="tel:+11234567890">+1 (123) 456-7890</a>
+                  <a href="tel:+11234567890">+63 967 224 3141</a>
                 </li>
                 <li>Lapu-Lapu City, Cebu</li>
               </ul>

@@ -75,24 +75,22 @@ const HomePage = () => {
 
         <div className="industries-marquee-container">
           <div className="industries-marquee-track">
-            {/* First sequence */}
-            {industries.map((name, i) => (
-              <div key={`ind-1-${i}`} className="industry-item">
-                <span className="industry-name">{name}</span>
-              </div>
-            ))}
-            {/* Duplicate sequence for seamless loop */}
-            {industries.map((name, i) => (
-              <div key={`ind-2-${i}`} className="industry-item">
-                <span className="industry-name">{name}</span>
-              </div>
-            ))}
-            {/* Triplicate sequence for seamless loop */}
-            {industries.map((name, i) => (
-              <div key={`ind-3-${i}`} className="industry-item">
-                <span className="industry-name">{name}</span>
-              </div>
-            ))}
+            {/* Primary group */}
+            <div className="industries-marquee-group">
+              {[...industries, ...industries, ...industries].map((name, i) => (
+                <div key={`ind-1-${i}`} className="industry-item">
+                  <span className="industry-name">{name}</span>
+                </div>
+              ))}
+            </div>
+            {/* Duplicate group for seamless infinite loop */}
+            <div className="industries-marquee-group" aria-hidden="true">
+              {[...industries, ...industries, ...industries].map((name, i) => (
+                <div key={`ind-2-${i}`} className="industry-item">
+                  <span className="industry-name">{name}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

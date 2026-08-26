@@ -31,7 +31,7 @@ export const teamMembers = [
     id: 'lyka-bernandez',
     name: 'Angelika Bernadez',
     role: 'Growth Catalyst Brand Specialist',
-    image: `${base}Lyka 4_5 Photo_Growth Catalyst.png`,
+    image: `${base}lyka.jpeg`,
     tagline: 'Clarity in operations. Creativity in content. Confidence in growth.',
     bio: 'Angelika Bernadez is the reliable backend support behind organized operations and consistent content at Growth Catalyst. Combining administrative precision with a creative eye, Angelika helps startups, small businesses, and solo entrepreneurs stay organized, produce impactful content, and streamline digital workflows, using AI-assisted tools alongside careful human review to keep every output accurate and on-brand.',
     bibliography: [
@@ -72,7 +72,7 @@ export const teamMembers = [
       'Creative Video Editing & Production'
     ],
     quote: 'The best operations are the ones clients never have to think about clear systems, responsive support, and everything running on time.',
-    education: 'Virtual Assistant & Operations Management, with a background in video editing',
+    education: ' Virtual Assistant & Operations Specialist | Video Editing.',
     experienceYears: '2+ Years Experience',
     linkedin: 'https://linkedin.com',
     email: 'kevin@growthcatalyst.studio'
@@ -81,7 +81,7 @@ export const teamMembers = [
     id: 'jeune-senarlo',
     name: 'Jeune Senarlo',
     role: 'Client Success & Operation Specialist',
-    image: `${base}jeune.jpeg`,
+    image: `${base}jenu.jpeg`,
     tagline: 'Support. Solve. Improve.',
     bio: 'Jeune Senarlo is the reliable customer support behind Growth Catalyst\'s client operations. With a service-oriented foundation from hospitality and hands-on e-commerce experience, Jeune handles order concerns, returns, and refunds with care, while building the tracking systems that turn customer feedback into real operational improvement.',
     bibliography: [
@@ -97,10 +97,35 @@ export const teamMembers = [
       'Customer Experience (CX) Optimization'
     ],
     quote: 'Great customer support isn\'t just answering questions, it\'s resolving issues, documenting the pattern, and using it to make the whole experience better next time.',
-    education: 'B.S. in Hospitality Management, Major in Food and Beverage',
+    education: 'Customer Experience Specialist',
     experienceYears: '1+ Year Experience',
     linkedin: 'https://linkedin.com',
     email: 'jeune@growthcatalyst.studio'
+  },
+  {
+    id: 'kristoffer-layos',
+    name: 'Kristoffer Layos',
+    role: 'Web Developer Specialist',
+    image: `${base}layos.jpeg`,
+    tagline: 'Building digital experiences that drive growth and deliver results.',
+    bio: 'Kristoffer Layos is the Web Developer Specialist at Growth Catalyst Global. With a strong foundation in modern web technologies and a passion for clean, performant code, Kristoffer transforms creative visions into fully functional digital experiences. From responsive landing pages to complex web applications, he ensures every project is built with scalability, speed, and user experience at its core.',
+    bibliography: [
+      'Designed and developed responsive, high-performance websites and web applications for diverse clients.',
+      'Implemented modern front-end architectures using React, JavaScript, and CSS to deliver seamless user experiences.',
+      'Collaborated with design and operations teams to translate business requirements into polished digital products.'
+    ],
+    expertise: [
+      'Front-End Web Development',
+      'React & JavaScript Applications',
+      'Responsive & Mobile-First Design',
+      'Web Performance Optimization',
+      'UI/UX Implementation'
+    ],
+    quote: 'Great code is invisible to the user, they just feel the experience. That\'s the standard I build to.',
+    education: 'Web Development Specialist | IT Specialist',
+    experienceYears: '1+ Year Experience',
+    linkedin: 'https://linkedin.com',
+    email: 'kristoffer@growthcatalyst.studio'
   }
 ];
 

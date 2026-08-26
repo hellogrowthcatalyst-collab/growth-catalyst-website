@@ -319,22 +319,27 @@
 }
 
 .team-grid {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: clamp(0.5rem, 1.2vw, 1.25rem);
   max-width: 1200px;
   margin: 0 auto;
 }
 
+.team-grid .team-card {
+  width: 100%;
+}
+
 @media (min-width: 640px) {
-  .team-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .team-grid .team-card {
+    width: calc(50% - clamp(0.5rem, 1.2vw, 1.25rem) / 2);
   }
 }
 
 @media (min-width: 1024px) {
-  .team-grid {
-    grid-template-columns: repeat(4, 1fr);
+  .team-grid .team-card {
+    width: calc(25% - clamp(0.5rem, 1.2vw, 1.25rem) * 3 / 4);
   }
 }
 

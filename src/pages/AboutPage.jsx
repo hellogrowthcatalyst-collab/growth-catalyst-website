@@ -74,12 +74,12 @@ const AboutPage = () => {
         <div className="gc-marquee-container gc-marquee-container--top">
           <div className="gc-marquee-track">
             <div className="gc-marquee-group">
-              {Array(10).fill('Growth Catalyst').map((text, idx) => (
+              {Array(24).fill('Growth Catalyst').map((text, idx) => (
                 <span key={`top-1-${idx}`} className="gc-marquee-text">{text}</span>
               ))}
             </div>
             <div className="gc-marquee-group" aria-hidden="true">
-              {Array(10).fill('Growth Catalyst').map((text, idx) => (
+              {Array(24).fill('Growth Catalyst').map((text, idx) => (
                 <span key={`top-2-${idx}`} className="gc-marquee-text">{text}</span>
               ))}
             </div>
@@ -138,12 +138,12 @@ const AboutPage = () => {
         <div className="gc-marquee-container gc-marquee-container--bottom">
           <div className="gc-marquee-track gc-marquee-track--reverse">
             <div className="gc-marquee-group">
-              {Array(10).fill('Growth Catalyst').map((text, idx) => (
+              {Array(24).fill('Growth Catalyst').map((text, idx) => (
                 <span key={`bot-1-${idx}`} className="gc-marquee-text">{text}</span>
               ))}
             </div>
             <div className="gc-marquee-group" aria-hidden="true">
-              {Array(10).fill('Growth Catalyst').map((text, idx) => (
+              {Array(24).fill('Growth Catalyst').map((text, idx) => (
                 <span key={`bot-2-${idx}`} className="gc-marquee-text">{text}</span>
               ))}
             </div>
