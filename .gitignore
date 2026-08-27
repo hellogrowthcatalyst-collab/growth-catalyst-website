@@ -16,7 +16,6 @@ dist-ssr
 .env
 .env.local
 .env.production.local/
-.env.example
 
 # Vercel
 .vercel
