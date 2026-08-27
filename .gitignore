@@ -15,7 +15,8 @@ dist-ssr
 # Environment variables (never commit real credentials)
 .env
 .env.local
-.env.production.local
+.env.production.local/
+.env.example
 
 # Vercel
 .vercel
