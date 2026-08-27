@@ -103,8 +103,8 @@
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  background: rgba(37, 99, 235, 0.1);
-  color: var(--federal-blue);
+  background: rgba(34, 197, 94, 0.12);
+  color: var(--secondary-green, #22c55e);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -112,6 +112,9 @@
 }
 
 .contact-form__success-icon {
+  width: 28px;
+  height: 28px;
+  stroke: var(--secondary-green, #22c55e);
   display: block;
 }
 
@@ -198,53 +201,65 @@
 
 /* Schedule a Meeting Card */
 .contact-schedule-card {
-  background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(37, 99, 235, 0.01) 100%);
-  border: 1px solid rgba(37, 99, 235, 0.18);
+  background: var(--white);
+  border: 1px solid var(--gray-light);
   border-radius: 12px;
   padding: var(--space-md);
   margin-bottom: var(--space-xl);
   display: flex;
   flex-direction: column;
-  gap: var(--space-xs);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+  gap: var(--space-sm);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
 }
 
 .contact-schedule-card:hover {
-  border-color: rgba(37, 99, 235, 0.35);
+  border-color: var(--color-blue);
   box-shadow: 0 8px 24px rgba(37, 99, 235, 0.08);
+  transform: translateY(-2px);
 }
 
-.contact-schedule-card__badge {
-  display: inline-flex;
+.contact-schedule-card__header {
+  display: flex;
   align-items: center;
-  gap: 6px;
-  background: rgba(37, 99, 235, 0.1);
+  gap: 12px;
+}
+
+.contact-schedule-card__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(37, 99, 235, 0.08);
   color: var(--federal-blue);
-  font-family: var(--font-subheading);
-  font-size: 11px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  padding: 4px 10px;
-  border-radius: 20px;
-  align-self: flex-start;
-  margin-bottom: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 .contact-schedule-card__title {
   font-family: var(--font-heading);
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
   color: var(--rich-black);
+  line-height: 1.2;
+}
+
+.contact-schedule-card__meta {
+  display: block;
+  font-family: var(--font-subheading);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--gray);
+  margin-top: 2px;
 }
 
 .contact-schedule-card__desc {
   font-family: var(--font-body);
   font-size: 14px;
   color: var(--gray-dark);
-  line-height: 1.5;
-  margin-bottom: var(--space-xs);
+  line-height: 1.55;
+  margin: 0;
 }
 
 .contact-schedule-card__btn {
@@ -257,6 +272,15 @@
   gap: 0.5rem;
   text-decoration: none;
   border-radius: 6px;
+  margin-top: 2px;
+}
+
+.contact-schedule-card__btn svg {
+  transition: transform var(--transition-fast);
+}
+
+.contact-schedule-card__btn:hover svg {
+  transform: translateX(3px);
 }
 
 .contact-details__title {

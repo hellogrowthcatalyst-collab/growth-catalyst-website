@@ -105,6 +105,20 @@ const ContactPage = () => {
             {submitted ? (
               <div className="contact-form__success">
                 <div className="contact-form__success-icon-wrap">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="28"
+                    height="28"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="contact-form__success-icon"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
                 </div>
                 <h3 className="contact-form__success-title">Message Sent!</h3>
                 <p className="contact-form__success-text">We'll get back to you within 24 hours.</p>
@@ -169,18 +183,22 @@ const ContactPage = () => {
 
           <div className="contact-right reveal">
             <div className="contact-schedule-card">
-              <div className="contact-schedule-card__badge">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                  <line x1="16" y1="2" x2="16" y2="6"></line>
-                  <line x1="8" y1="2" x2="8" y2="6"></line>
-                  <line x1="3" y1="10" x2="21" y2="10"></line>
-                </svg>
-                <span>Direct Booking</span>
+              <div className="contact-schedule-card__header">
+                <div className="contact-schedule-card__icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="contact-schedule-card__title">Book a Discovery Call</h3>
+                  <span className="contact-schedule-card__meta">15–30 min intro call</span>
+                </div>
               </div>
-              <h3 className="contact-schedule-card__title">Prefer to talk directly?</h3>
               <p className="contact-schedule-card__desc">
-                Schedule a 1-on-1 discovery call directly on our calendar at a time that works best for you.
+                Prefer to talk directly? Pick a time on our calendar that works best for you and let's discuss your project.
               </p>
               <a
                 href="https://calendly.com/hello-growthcatalyst/new-meeting"
@@ -188,13 +206,11 @@ const ContactPage = () => {
                 rel="noopener noreferrer"
                 className="btn btn--primary contact-schedule-card__btn"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                  <line x1="16" y1="2" x2="16" y2="6"></line>
-                  <line x1="8" y1="2" x2="8" y2="6"></line>
-                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                <span>Choose a Time</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
                 </svg>
-                <span>Schedule a Meeting</span>
               </a>
             </div>
 
