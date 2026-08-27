@@ -1,5 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import './ContactPage.css';
+
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -11,7 +13,11 @@ const ContactPage = () => {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-  const loadedAtRef = useRef(Date.now());
+  const loadedAtRef = useRef(0);
+
+  useEffect(() => {
+    loadedAtRef.current = Date.now();
+  }, []);
 
   const observerRef = useRef(null);
 
@@ -47,8 +53,7 @@ const ContactPage = () => {
       return;
     }
 
-    const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
-    if (!emailRegex.test(formData.email)) {
+    if (!EMAIL_REGEX.test(formData.email.trim())) {
       setError('Please enter a valid email address.');
       return;
     }
@@ -69,7 +74,7 @@ const ContactPage = () => {
         }),
       });
 
-      const data = await response.json();
+      const data = await response.json().catch(() => ({}));
 
       if (response.ok && data.success) {
         setSubmitted(true);
@@ -77,7 +82,7 @@ const ContactPage = () => {
       } else {
         setError(data.error || 'Something went wrong. Please try again.');
       }
-    } catch (err) {
+    } catch {
       setError('Network error. Please check your connection and try again.');
     } finally {
       setLoading(false);

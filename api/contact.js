@@ -66,8 +66,9 @@ export default async function handler(req, res) {
     }
 
     // Ensure env vars are configured
-    const gmailUser = process.env.GMAIL_USER;
-    const gmailPass = process.env.GMAIL_APP_PASSWORD;
+    const gmailUser = process.env.GMAIL_USER ? process.env.GMAIL_USER.trim() : null;
+    const rawPass = process.env.GMAIL_APP_PASSWORD;
+    const gmailPass = rawPass ? rawPass.replace(/['"]/g, '').replace(/\s+/g, '') : null;
 
     if (!gmailUser || !gmailPass) {
       console.error('Missing GMAIL_USER or GMAIL_APP_PASSWORD environment variables.');
