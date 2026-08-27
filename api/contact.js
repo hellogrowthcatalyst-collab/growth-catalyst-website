@@ -91,6 +91,7 @@ export default async function handler(req, res) {
     }
 
     // Create Nodemailer transporter
+    // family: 4 forces IPv4 to avoid ENETUNREACH on networks with broken IPv6
     const transporter = nodemailer.createTransport({
       host: 'smtp.gmail.com',
       port: 465,
@@ -99,6 +100,8 @@ export default async function handler(req, res) {
         user: gmailUser,
         pass: gmailPass,
       },
+      // Force IPv4 — some networks advertise IPv6 but can't route to Google
+      dnsOptions: { family: 4 },
     });
 
     // Compose & send email
@@ -144,7 +147,18 @@ export default async function handler(req, res) {
 
     return res.status(200).json({ success: true });
   } catch (err) {
-    console.error('Contact form error:', err);
+    // Log the full Nodemailer error for server-side diagnosis
+    // (auth failures, connection timeouts, Gmail rate limits, etc.)
+    console.error('Contact form sendMail error:', {
+      timestamp: new Date().toISOString(),
+      name: err.name,
+      message: err.message,
+      code: err.code,
+      command: err.command,
+      responseCode: err.responseCode,
+      stack: err.stack,
+    });
+    // Return generic error to client — never leak SMTP details
     return res.status(500).json({
       success: false,
       error: 'Failed to send message. Please try again later.',
