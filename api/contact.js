@@ -36,9 +36,17 @@ function validateFields({ name, email, message }) {
 // --- Handler ---
 
 export default async function handler(req, res) {
-  // Only allow POST
+  // Return friendly status on GET for easy browser testing
+  if (req.method === 'GET') {
+    return res.status(200).json({
+      success: true,
+      message: 'Growth Catalyst Contact API is online. Use POST to send messages.',
+    });
+  }
+
+  // Only allow POST for submissions
   if (req.method !== 'POST') {
-    res.setHeader('Allow', 'POST');
+    res.setHeader('Allow', 'GET, POST');
     return res.status(405).json({ success: false, error: 'Method not allowed.' });
   }
 
@@ -66,12 +74,16 @@ export default async function handler(req, res) {
     }
 
     // Ensure env vars are configured
-    const gmailUser = process.env.GMAIL_USER ? process.env.GMAIL_USER.trim() : null;
-    const rawPass = process.env.GMAIL_APP_PASSWORD;
-    const gmailPass = rawPass ? rawPass.replace(/['"]/g, '').replace(/\s+/g, '') : null;
+    const userEnv = process.env.GMAIL_USER || process.env.VITE_GMAIL_USER;
+    const passEnv = process.env.GMAIL_APP_PASSWORD || process.env.VITE_GMAIL_APP_PASSWORD;
+
+    const gmailUser = userEnv ? userEnv.trim() : null;
+    const gmailPass = passEnv ? passEnv.replace(/['"]/g, '').replace(/\s+/g, '') : null;
 
     if (!gmailUser || !gmailPass) {
-      console.error('Missing GMAIL_USER or GMAIL_APP_PASSWORD environment variables.');
+      console.error(
+        `Configuration Error: GMAIL_USER (${gmailUser ? 'set' : 'MISSING'}) or GMAIL_APP_PASSWORD (${gmailPass ? 'set' : 'MISSING'}) is not configured in environment.`
+      );
       return res.status(500).json({
         success: false,
         error: 'Server configuration error. Please try again later.',
