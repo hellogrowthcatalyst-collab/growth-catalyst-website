@@ -107,8 +107,8 @@ const ContactPage = () => {
                 <div className="contact-form__success-icon-wrap">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="28"
-                    height="28"
+                    width="32"
+                    height="32"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
@@ -121,58 +121,103 @@ const ContactPage = () => {
                   </svg>
                 </div>
                 <h3 className="contact-form__success-title">Message Sent!</h3>
-                <p className="contact-form__success-text">We'll get back to you within 24 hours.</p>
+                <p className="contact-form__success-desc">
+                  Thank you for reaching out to Growth Catalyst. We have received your message in our inbox and will get back to you within 24 hours.
+                </p>
                 <button
                   type="button"
-                  className="btn btn--outline contact-form__success-btn"
-                  onClick={() => setSubmitted(false)}
+                  className="btn btn--outline contact-form__reset-btn"
+                  onClick={() => {
+                    setSubmitted(false);
+                    setError('');
+                    loadedAtRef.current = Date.now();
+                  }}
                 >
                   Send Another Message
                 </button>
               </div>
             ) : (
-              <form className="contact-form" onSubmit={handleSubmit}>
-                {error && <div className="contact-form__error">{error}</div>}
-
+              <form className="contact-form" onSubmit={handleSubmit} noValidate>
                 {/* Honeypot field — hidden from real users, bots auto-fill it */}
-                <div className="contact-form__honeypot" aria-hidden="true">
-                  <label htmlFor="website">Website</label>
+                <div style={{ display: 'none' }} aria-hidden="true">
+                  <label htmlFor="contact_honeypot">Leave this field blank</label>
                   <input
                     type="text"
-                    id="website"
-                    name="website"
-                    tabIndex={-1}
+                    id="contact_honeypot"
+                    name="_honeypot"
+                    tabIndex="-1"
                     autoComplete="off"
                     value={honeypot}
                     onChange={(e) => setHoneypot(e.target.value)}
                   />
                 </div>
 
+                {error && (
+                  <div className="contact-form__error" role="alert">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="12" y1="8" x2="12" y2="12"></line>
+                      <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                    </svg>
+                    <span>{error}</span>
+                  </div>
+                )}
+
                 <div className="contact-form__group">
                   <label htmlFor="name" className="contact-form__label">Name *</label>
-                  <input type="text" id="name" name="name" required className="contact-form__input" value={formData.name} onChange={handleChange} />
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    className="contact-form__input"
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="Your Full Name"
+                    disabled={loading}
+                  />
                 </div>
 
                 <div className="contact-form__group">
                   <label htmlFor="email" className="contact-form__label">Email *</label>
-                  <input type="email" id="email" name="email" required className="contact-form__input" value={formData.email} onChange={handleChange} />
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    className="contact-form__input"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="your.email@example.com"
+                    disabled={loading}
+                  />
                 </div>
 
                 <div className="contact-form__group">
                   <label htmlFor="message" className="contact-form__label">Message *</label>
-                  <textarea id="message" name="message" required className="contact-form__input contact-form__textarea" rows="4" value={formData.message} onChange={handleChange}></textarea>
+                  <textarea
+                    id="message"
+                    name="message"
+                    required
+                    className="contact-form__input contact-form__textarea"
+                    rows="4"
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder="Tell us about your project, goals, or inquiry."
+                    disabled={loading}
+                  ></textarea>
                 </div>
 
                 <button
                   type="submit"
-                  className={`btn btn--primary contact-form__btn${loading ? ' contact-form__btn--loading' : ''}`}
+                  className="btn btn--primary contact-form__btn"
                   disabled={loading}
                 >
                   {loading ? (
-                    <>
-                      <span className="contact-form__spinner"></span>
-                      Sending...
-                    </>
+                    <span className="contact-form__btn-loading">
+                      <span className="contact-form__spinner" />
+                      Sending Message...
+                    </span>
                   ) : (
                     'Send Message'
                   )}
@@ -251,6 +296,9 @@ const ContactPage = () => {
                 </a>
                 <a href="https://ph.pinterest.com/hellogrowthcatalyst/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest" className="contact-social__link">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z" /></svg>
+                </a>
+                <a href="https://x.com/growthcatalyst6?ref_src=twsrc%5Etfw" target="_blank" rel="noopener noreferrer" aria-label="X" className="contact-social__link">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>
                 </a>
               </div>
             </div>
