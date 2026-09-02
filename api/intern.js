@@ -68,7 +68,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { name, email, track, portfolio, message, _honeypot, _loadedAt } = req.body || {};
+    const { name, email, track, portfolio, message, vaExperience, vaExpertise, unpaidTrial, anythingElse, _honeypot, _loadedAt } = req.body || {};
 
     // Honeypot check — bots auto-fill hidden fields.
     // If filled, pretend success so the bot thinks it worked.
@@ -125,6 +125,10 @@ export default async function handler(req, res) {
     const safeTrack = track.trim();
     const safePortfolio = portfolio ? portfolio.trim() : 'Not provided';
     const safeMessage = message.trim();
+    const safeVaExperience = vaExperience ? vaExperience.trim() : 'Not provided';
+    const safeVaExpertise = vaExpertise ? vaExpertise.trim() : 'Not provided';
+    const safeUnpaidTrial = unpaidTrial ? unpaidTrial.trim() : 'Not provided';
+    const safeAnythingElse = anythingElse ? anythingElse.trim() : 'Not provided';
 
     // Compose & send email
     await transporter.sendMail({
@@ -138,6 +142,10 @@ export default async function handler(req, res) {
         `Email: ${safeEmail}`,
         `Track / Role: ${safeTrack}`,
         `Portfolio / Resume: ${safePortfolio}`,
+        `VA Experience: ${safeVaExperience}`,
+        `VA Expertise: ${safeVaExpertise}`,
+        `Unpaid Trial: ${safeUnpaidTrial}`,
+        `Anything Else: ${safeAnythingElse}`,
         '',
         `Message:`,
         safeMessage,
@@ -180,6 +188,22 @@ export default async function handler(req, res) {
                       : escapeHtml(safePortfolio)
                   }
                 </td>
+              </tr>
+              <tr>
+                <td style="padding: 10px 12px; font-weight: bold; color: #4a5568; border-bottom: 1px solid #edf2f7;">VA Experience</td>
+                <td style="padding: 10px 12px; border-bottom: 1px solid #edf2f7; color: #1a202c;">${escapeHtml(safeVaExperience)}</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px 12px; font-weight: bold; color: #4a5568; border-bottom: 1px solid #edf2f7;">VA Expertise</td>
+                <td style="padding: 10px 12px; border-bottom: 1px solid #edf2f7; color: #1a202c;">${escapeHtml(safeVaExpertise)}</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px 12px; font-weight: bold; color: #4a5568; border-bottom: 1px solid #edf2f7;">Unpaid Trial</td>
+                <td style="padding: 10px 12px; border-bottom: 1px solid #edf2f7; color: #1a202c;">${escapeHtml(safeUnpaidTrial)}</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px 12px; font-weight: bold; color: #4a5568; border-bottom: 1px solid #edf2f7;">Anything Else</td>
+                <td style="padding: 10px 12px; border-bottom: 1px solid #edf2f7; color: #1a202c;">${escapeHtml(safeAnythingElse)}</td>
               </tr>
             </table>
 
