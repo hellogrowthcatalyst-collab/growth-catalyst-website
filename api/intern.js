@@ -68,7 +68,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { name, email, track, portfolio, message, vaExperience, vaExpertise, unpaidTrial, anythingElse, _honeypot, _loadedAt } = req.body || {};
+    const { name, email, track, portfolio, message, vaExperience, vaExpertise, unpaidTrial, anythingElse, _honeypot, _elapsed } = req.body || {};
 
     // Honeypot check — bots auto-fill hidden fields.
     // If filled, pretend success so the bot thinks it worked.
@@ -76,10 +76,9 @@ export default async function handler(req, res) {
       return res.status(200).json({ success: true });
     }
 
-    // Timestamp-based rate limiting — reject if submitted too fast (< 2s)
-    if (_loadedAt) {
-      const elapsed = Date.now() - Number(_loadedAt);
-      if (elapsed < 2000) {
+    // Timing-based rate limiting — reject if submitted too fast (< 2s)
+    if (_elapsed !== undefined) {
+      if (Number(_elapsed) < 2000) {
         return res.status(200).json({ success: true }); // silent rejection
       }
     }

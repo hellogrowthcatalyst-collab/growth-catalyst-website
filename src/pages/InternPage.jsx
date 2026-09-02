@@ -78,20 +78,18 @@ const InternPage = () => {
       unpaidTrial: formData.unpaidTrial,
       anythingElse: formData.anythingElse,
       _honeypot: honeypot,
-      _loadedAt: loadedAtRef.current,
+      _elapsed: Date.now() - loadedAtRef.current,
     });
 
     try {
       // ── 1. Google Apps Script (spreadsheet) — fire-and-forget ──
       // Sent in "no-cors" mode because Apps Script doesn't return
-      // CORS headers.  The opaque response (status 0) is expected;
-      // we simply let it fly and don't block on the result.
+      // CORS headers.  The opaque response (status 0) is expected.
       const scriptUrl = import.meta.env.VITE_GOOGLE_SCRIPT_URL;
       if (scriptUrl) {
         fetch(scriptUrl, {
           method: 'POST',
           mode: 'no-cors',
-          headers: { 'Content-Type': 'application/json' },
           body: payload,
         }).catch(() => {
           // Silently ignore — spreadsheet logging is best-effort.

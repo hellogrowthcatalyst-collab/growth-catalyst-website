@@ -32,9 +32,8 @@ function doPost(e) {
 
     // ── Anti-spam: timing check ──
     // If the form was submitted in under 2 seconds, likely a bot.
-    if (data._loadedAt) {
-      var elapsed = Date.now() - Number(data._loadedAt);
-      if (elapsed < 2000) {
+    if (data._elapsed !== undefined) {
+      if (Number(data._elapsed) < 2000) {
         return ContentService
           .createTextOutput(JSON.stringify({ success: true }))
           .setMimeType(ContentService.MimeType.JSON);
