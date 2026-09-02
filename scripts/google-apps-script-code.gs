@@ -30,15 +30,7 @@ function doPost(e) {
         .setMimeType(ContentService.MimeType.JSON);
     }
 
-    // ── Anti-spam: timing check ──
-    // If the form was submitted in under 2 seconds, likely a bot.
-    if (data._elapsed !== undefined) {
-      if (Number(data._elapsed) < 2000) {
-        return ContentService
-          .createTextOutput(JSON.stringify({ success: true }))
-          .setMimeType(ContentService.MimeType.JSON);
-      }
-    }
+    // Anti-spam timing check has been removed for testing purposes.
 
     // ── Server-side validation ──
     var name         = (data.name         || '').toString().trim();

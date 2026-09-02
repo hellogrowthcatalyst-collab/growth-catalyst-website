@@ -76,12 +76,7 @@ export default async function handler(req, res) {
       return res.status(200).json({ success: true });
     }
 
-    // Timing-based rate limiting — reject if submitted too fast (< 2s)
-    if (_elapsed !== undefined) {
-      if (Number(_elapsed) < 2000) {
-        return res.status(200).json({ success: true }); // silent rejection
-      }
-    }
+    // Timing-based rate limiting has been removed for testing purposes.
 
     // Validate fields
     const validationError = validateFields({ name, email, track, portfolio, message });
