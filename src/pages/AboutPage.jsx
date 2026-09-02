@@ -191,13 +191,29 @@ const AboutPage = () => {
       </section>
 
 
-      {/* 6. Join the Team CTA */}
+      {/* 5. Join the Team CTA */}
       <section className="section section--blue join-cta">
         <div className="container reveal">
           <h2>Want to grow with us?</h2>
           <Link to="/intern" className="btn btn--outline-white btn--pill">
             Be Our Intern
           </Link>
+        </div>
+      </section>
+
+      {/* 6. Ready to Scale CTA */}
+      <section className="section section--white about-client-cta">
+        <div className="container text-center reveal">
+          <span className="section-label">PARTNER WITH US</span>
+          <h2 className="about-client-cta__title">Ready to Scale Your Business?</h2>
+          <p className="about-client-cta__desc">
+            Let's collaborate to build sustainable systems, elevate your brand, and accelerate your growth.
+          </p>
+          <div className="about-client-cta__actions">
+            <Link to="/contact" className="btn btn--outline btn--pill">
+              Get in Touch
+            </Link>
+          </div>
         </div>
       </section>
     </div>

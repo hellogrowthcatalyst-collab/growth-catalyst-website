@@ -190,6 +190,19 @@ p {
   transform: translateY(-2px);
 }
 
+.btn--white {
+  background: var(--white);
+  color: var(--federal-blue);
+  border: 2px solid var(--white);
+}
+
+.btn--white:hover {
+  background: transparent;
+  color: var(--white);
+  border-color: var(--white);
+  transform: translateY(-2px);
+}
+
 .btn--outline-white {
   background: transparent;
   color: var(--white);
