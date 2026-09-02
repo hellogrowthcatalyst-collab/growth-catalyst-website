@@ -9,7 +9,11 @@ const InternPage = () => {
     email: '',
     track: '',
     portfolio: '',
-    message: ''
+    message: '',
+    vaExperience: '',
+    vaExpertise: '',
+    unpaidTrial: '',
+    anythingElse: ''
   });
   const [honeypot, setHoneypot] = useState('');
   const [submitted, setSubmitted] = useState(false);
@@ -63,26 +67,50 @@ const InternPage = () => {
     setError('');
     setLoading(true);
 
+    const payload = JSON.stringify({
+      name: formData.name,
+      email: formData.email,
+      track: formData.track,
+      portfolio: formData.portfolio,
+      message: formData.message,
+      vaExperience: formData.vaExperience,
+      vaExpertise: formData.vaExpertise,
+      unpaidTrial: formData.unpaidTrial,
+      anythingElse: formData.anythingElse,
+      _honeypot: honeypot,
+      _loadedAt: loadedAtRef.current,
+    });
+
     try {
+      // ── 1. Google Apps Script (spreadsheet) — fire-and-forget ──
+      // Sent in "no-cors" mode because Apps Script doesn't return
+      // CORS headers.  The opaque response (status 0) is expected;
+      // we simply let it fly and don't block on the result.
+      const scriptUrl = import.meta.env.VITE_GOOGLE_SCRIPT_URL;
+      if (scriptUrl) {
+        fetch(scriptUrl, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: payload,
+        }).catch(() => {
+          // Silently ignore — spreadsheet logging is best-effort.
+          // The email endpoint below is the authoritative handler.
+        });
+      }
+
+      // ── 2. /api/intern (email notification) — awaited ──
       const response = await fetch('/api/intern', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          track: formData.track,
-          portfolio: formData.portfolio,
-          message: formData.message,
-          _honeypot: honeypot,
-          _loadedAt: loadedAtRef.current,
-        }),
+        body: payload,
       });
 
       const data = await response.json().catch(() => ({}));
 
       if (response.ok && data.success) {
         setSubmitted(true);
-        setFormData({ name: '', email: '', track: '', portfolio: '', message: '' });
+        setFormData({ name: '', email: '', track: '', portfolio: '', message: '', vaExperience: '', vaExpertise: '', unpaidTrial: '', anythingElse: '' });
       } else {
         setError(data.error || 'Something went wrong. Please try again later.');
       }
@@ -330,6 +358,67 @@ const InternPage = () => {
                     value={formData.message}
                     onChange={handleChange}
                     placeholder="Tell us a little bit about yourself, your background, and why you'd like to intern with us."
+                    disabled={loading}
+                  ></textarea>
+                </div>
+
+                <div className="intern-form__group">
+                  <label htmlFor="vaExperience" className="intern-form__label">Do you have any experience of being a Virtual Assistant?</label>
+                  <select
+                    id="vaExperience"
+                    name="vaExperience"
+                    className="intern-form__input intern-form__select"
+                    value={formData.vaExperience}
+                    onChange={handleChange}
+                    disabled={loading}
+                  >
+                    <option value="" disabled>Select an option</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                  </select>
+                </div>
+
+                <div className="intern-form__group">
+                  <label htmlFor="vaExpertise" className="intern-form__label">Which area(s) of expertise in Virtual Assistance do you have?</label>
+                  <select
+                    id="vaExpertise"
+                    name="vaExpertise"
+                    className="intern-form__input intern-form__select"
+                    value={formData.vaExpertise}
+                    onChange={handleChange}
+                    disabled={loading}
+                  >
+                    <option value="" disabled>Select your area of expertise</option>
+                    <option value="Social Media">Social Media</option>
+                    <option value="Video Editing">Video Editing</option>
+                    <option value="Website Designer">Website Designer</option>
+                  </select>
+                </div>
+
+                <div className="intern-form__group">
+                  <label htmlFor="unpaidTrial" className="intern-form__label">Are you interested in a 1 month unpaid trial?</label>
+                  <textarea
+                    id="unpaidTrial"
+                    name="unpaidTrial"
+                    className="intern-form__input intern-form__textarea"
+                    rows="3"
+                    value={formData.unpaidTrial}
+                    onChange={handleChange}
+                    placeholder="Share your thoughts about the 1 month unpaid trial period."
+                    disabled={loading}
+                  ></textarea>
+                </div>
+
+                <div className="intern-form__group">
+                  <label htmlFor="anythingElse" className="intern-form__label">Is there anything else you'd like us to know before we hop on a call?</label>
+                  <textarea
+                    id="anythingElse"
+                    name="anythingElse"
+                    className="intern-form__input intern-form__textarea"
+                    rows="3"
+                    value={formData.anythingElse}
+                    onChange={handleChange}
+                    placeholder="Any additional information, availability, or questions you'd like to share."
                     disabled={loading}
                   ></textarea>
                 </div>
